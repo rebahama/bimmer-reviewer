@@ -2,16 +2,19 @@
 
 {% block content %}
 
-
-{% for post in object_list %}
-    <h3>The title {{post.title}}</h3>
-
-    <h4> by <a href="{% url 'detail-review' post.pk %}">  {{post.author}} </h4>
-
-    <img src="{{post.image.url}}" width="150" height="100">
-
-    <p>{{post.body}}</p>
-
-{% endfor %}
+<div class="row row-cols-1 row-cols-md-4  g-4">
+    {% for post in object_list %}
+    <div class="col">
+        <div class="card mb-3">
+            <img src="{{post.image.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{post.title}}</h5>
+              <p class="card-text"> {{post.body}} </p>
+              <a href="{% url 'detail-review' post.pk %}"> <p class="card-text"><small class="text-muted">By {{post.author}} </small></p> </a>
+            </div>
+          </div>
+    </div>
+    {% endfor %}
+</div>
 
 {% endblock %}
