@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3> create review</h3>
+
+<form method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button> Post</button>
+
+
+</form>
+
+{% endblock %}
