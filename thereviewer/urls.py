@@ -22,4 +22,5 @@ urlpatterns = [
     path('', views.Firstview.as_view(), name='home'),
     path('review/<int:pk>', views.DetailReview.as_view(), name='detail-review'),
     path('create-reviews/', views.CreateReview.as_view(), name='create-review'),
+    path('update-reviews/<int:pk>', views.UpdateReview.as_view(), name='update-review'),
 ]

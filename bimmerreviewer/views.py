@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from . models import Post
 
 
@@ -17,3 +17,9 @@ class CreateReview(CreateView):
     model = Post
     template_name = 'create-review.html'
     fields = '__all__'
+
+
+class UpdateReview(UpdateView):
+    model = Post
+    template_name = 'update-review.html'
+    fields = ['title', 'body', 'image']
