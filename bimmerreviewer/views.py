@@ -11,3 +11,4 @@ class Firstview(ListView):
 class DetailReview(DetailView):
     model = Post
     template_name = 'detail-review.html'
+
