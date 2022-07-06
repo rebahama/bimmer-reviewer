@@ -10,3 +10,8 @@
 .col{
     margin-top: 90px;
 }
+.btn-change{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
