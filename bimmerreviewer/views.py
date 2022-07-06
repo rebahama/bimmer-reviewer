@@ -4,6 +4,10 @@ from django.urls import reverse_lazy
 from . models import Post
 
 
+def homepage(request):
+    return render(request, 'index.html')
+
+
 class Firstview(ListView):
     """Show all the data from the queryset """
     model = Post
