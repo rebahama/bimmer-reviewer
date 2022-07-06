@@ -5,6 +5,7 @@ from . models import Post
 
 
 def homepage(request):
+    """Render the html file below"""
     return render(request, 'index.html')
 
 

@@ -1,20 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
+<!--Position the form and render it-->
 <div class="position-absolute top-50 start-50 translate-middle">
-<h3 class="display-3"> Create review</h3>
-<div class="form-group">
-<table class="form-control">
-<form method="POST" enctype="multipart/form-data">
-    {%csrf_token%}
-    {{form.as_table}}
-   
-</table>
-
-<button class="btn btn-primary"> Post</button>
-</form>
-</div>
+    <h3 class="display-3"> Create review</h3>
+    <div class="form-group">
+        <table class="form-control">
+            <form method="POST" enctype="multipart/form-data">
+                {%csrf_token%}
+                {{form.as_table}}
+        </table>
+        <button class="btn btn-primary"> Post</button>
+        </form>
+    </div>
 </div>
 
 

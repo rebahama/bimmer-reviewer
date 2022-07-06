@@ -19,5 +19,5 @@ class Post(models.Model):
         return self.title + '  ' + str(self.author)
 
     def get_absolute_url(self):
+        """ Return to the html file below after POST the data"""
         return reverse('home')
-
