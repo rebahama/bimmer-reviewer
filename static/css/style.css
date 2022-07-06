@@ -38,7 +38,7 @@
  animation-duration: 3s;
  animation-fill-mode: forwards;
 }
-@keyframes hero-zoom{ /* själva animeringen sker här*/
+@keyframes hero-zoom{ /* image is animated here*/
     from{
 transform: scale(1);
     }
@@ -48,4 +48,11 @@ transform: scale(1.1);
 }
 .intro-text{
     text-align: center;
+}
+#hide-btn{
+    margin-top: 3%;
+}
+.text-delete{
+    text-align: center;
+    margin: 35px;
 }
