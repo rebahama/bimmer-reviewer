@@ -28,11 +28,12 @@
     margin-bottom: 6%;
 }
 .img-container{
- background-image: url(../images/bmw-background.jpeg);
+ background-image: url(../images/bmw-background-2.jpg);
  background-size: cover;
  background-repeat: no-repeat;
  padding-top: 200px;
  padding-bottom: 250px;
+ text-align: center;
  margin-top: 2%;
  min-width: 100%;
  overflow: hidden;
@@ -48,6 +49,7 @@ transform: scale(1);
 transform: scale(1.1);
 }
 }
+/*style the intro text*/
 .intro-text{
     text-align: center;
 }
@@ -57,4 +59,11 @@ transform: scale(1.1);
 .text-delete{
     text-align: center;
     margin: 35px;
+}
+.register-btn{
+    font-size: 25px;
+}
+.background-img{
+    background: url('../images/bmw-background.jpeg') center;
+    background-size: cover;
 }
