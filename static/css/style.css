@@ -23,6 +23,7 @@
 .hero{
     overflow: hidden;
     margin-top: 2%;
+    margin-bottom: 6%;
 }
 .img-container{
  background-image: url(../images/bmw-background.jpeg);
