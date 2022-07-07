@@ -43,10 +43,10 @@
 }
 @keyframes hero-zoom{ /* image is animated here*/
     from{
-transform: scale(1);
+transform: scale(3);
     }
  to{
-transform: scale(1.1);
+transform: scale(1);
 }
 }
 /*style the intro text*/
