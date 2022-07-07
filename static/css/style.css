@@ -67,3 +67,18 @@ transform: scale(1);
     background: url('../images/bmw-background.jpeg') center;
     background-size: cover;
 }
+/*style the review cards*/
+.hide{
+    padding: 100px;
+}
+.card-img-top{
+    border-radius: 3%;
+    margin-top: 5px;
+}
+.view-btn{
+    text-align: center;
+    margin-top: 10%;
+}
+.btn-size{
+    width: 200px;
+}
