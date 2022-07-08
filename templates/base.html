@@ -63,10 +63,13 @@
       </div>
     </nav>
   </header>
+  <!--Show username that is logged in, onlyshown if the user i logged in-->
+  {% if user.is_authenticated %}
+  <h6> Logged in as {{user.username}}</h6>
+  {% endif %}
   <!--Main content-->
   <div class="container">
     {% block content %}
-
     {% endblock %}
   </div>
   <!--Footer starts here-->
