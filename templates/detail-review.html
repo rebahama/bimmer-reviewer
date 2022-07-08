@@ -2,16 +2,29 @@
 
 {% block content %}
 <div class="container">
-    <div class="row">    
-        <div class="col-sm-12 detail-review-container" style="background-color:yellow;">
-            <h3>{{post.title}}</h3>
-            <img src="{{post.image.url}}" class="detail-review-img" alt="picture of bmw car" width="200" height="300">
-        
-
-        <p>{{post.body}}</p>
-
-        <small>{{post.create_date}}</small>
-    </div>
+    <div class="row">
+        <div class="col-sm-12 detail-review-container bg-secondary bg-gradient rounded">
+            <div class="detail-img-container">
+                <img src="{{post.image.url}}" class="img-fluid rounded animate-detail-img" width="400" height="500" alt="...">
+            
+            <div class="card detail-review-card">
+                <h3>{{post.title}}</h3>
+                <div class="card-body">
+                    <p class="card-text">{{post.body}} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
+                        distinctio quo, quaerat at vero consequatur voluptates repellendus vitae aperiam! Molestias
+                        consequuntur, unde odio laborum similique perspiciatis aut sint alias blanditiis.</p>
+                        <div class="card">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">Year</li>
+                          <li class="list-group-item">Price</li>
+                          <li class="list-group-item">Engine</li>
+                        </ul>
+                      </div>
+                      <small> post created by {{post.author}} {{post.create_date}}</small>
+                </div>
+            </div>
+        </div>
+        </div>
     </div>
 </div>
 
