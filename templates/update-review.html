@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 <!--Update the database-->
+{% if user.is_authenticated %}
+           {% if user.id == post.author.id%}
 <div class="position-absolute top-50 start-50 translate-middle">
     <h3 class="display-3"> Update review</h3>
     <div class="form-group">
@@ -13,4 +15,10 @@
         </form>
     </div>
 </div>
+    {% else %}
+    Please log in
+    {% endif %}
+{% else %}
+    Please log in
+    {% endif %}
 {% endblock %}
