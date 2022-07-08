@@ -10,7 +10,7 @@
         <div class="card-header bg-dark text-white text-center">
           <h3>{{post.title}} </h3>
         </div>
-        <img src="{{post.image.url}}" class="card-img-top" alt="picture of bmw car" width="200" height="300">
+          <img src="{{post.image.url}}" class="card-img-top" alt="picture of bmw car" width="200" height="300">
         <div class="card-body">
           <hr>
           <p class="card-text"> {{post.body}}......... </p>
@@ -28,7 +28,7 @@
           </div>
           <p class="card-text"><small class="text-muted">Created by {{post.author.id}} </small></p>
           <p class="card-text"><small class="text-muted">Date: {{post.create_date}} </small></p>
-          {{user.id}}
+          Logged in as {{post.author}}
         </div>
       </div>
     </div>

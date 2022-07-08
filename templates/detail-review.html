@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="container">
+    <div class="row">    
+        <div class="col-sm-12 detail-review-container" style="background-color:yellow;">
+            <h3>{{post.title}}</h3>
+            <img src="{{post.image.url}}" class="detail-review-img" alt="picture of bmw car" width="200" height="300">
+        
 
-{{post.title}}
-{{post.body}}
+        <p>{{post.body}}</p>
 
-
-{{post.create_date}}
+        <small>{{post.create_date}}</small>
+    </div>
+    </div>
+</div>
 
 {% endblock %}
