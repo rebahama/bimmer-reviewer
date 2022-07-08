@@ -14,15 +14,6 @@
         <div class="card-body">
           <hr>
           <p class="card-text"> {{post.body}}......... </p>
-          <!--Only show if the user is logged in-->
-          {% if user.is_authenticated %}
-           {% if user.id == post.author.id%}
-            <div class="btn-change">
-              <a href="{% url 'update-review' post.pk %}" class="btn btn-primary">Update </a>
-              <a href="{% url 'delete-review' post.pk %}" class="btn btn-danger">Delete</a>
-            </div>
-            {% endif %}
-          {% endif %}
           <div class="view-btn">
             <a href="{% url 'detail-review' post.pk %}" class="btn btn-danger btn-size">View review</a>
           </div>

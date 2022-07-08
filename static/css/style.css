@@ -86,7 +86,7 @@ transform: scale(1);
 .detail-review-container{
     margin-top: 4%;
     margin-bottom: 4%;
-    padding: 40px;
+    padding: 60px;
     display: flex;
     justify-content: center;
     
@@ -98,8 +98,8 @@ transform: scale(1);
     display: flex;
     justify-content: space-around;
     animation-name: animate-detail-img-zoom;  
- animation-duration: 3s;
- animation-fill-mode: forwards;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
 }
 @keyframes animate-detail-img-zoom{ /* image is animated here*/
     from{

@@ -5,10 +5,9 @@
     <div class="row">
         <div class="col-sm-12 detail-review-container bg-secondary bg-gradient rounded">
             <div class="detail-img-container">
-                <img src="{{post.image.url}}" class="img-fluid rounded animate-detail-img" width="400" height="500" alt="...">
-            
+                <img src="{{post.image.url}}" class="img-fluid rounded animate-detail-img" width="400" height="500" alt="...">      
             <div class="card detail-review-card">
-                <h3>{{post.title}}</h3>
+                <h4 class="card-title text-center bg-dark text-white text-center">{{post.title}}</h4>
                 <div class="card-body">
                     <p class="card-text">{{post.body}} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
                         distinctio quo, quaerat at vero consequatur voluptates repellendus vitae aperiam! Molestias
@@ -25,6 +24,15 @@
             </div>
         </div>
         </div>
+                 <!--Only show if the user is logged in-->
+                 {% if user.is_authenticated %}
+                 {% if user.id == post.author.id%}
+                  <div class="btn-change">
+                    <a href="{% url 'update-review' post.pk %}" class="btn btn-primary">Update </a>
+                    <a href="{% url 'delete-review' post.pk %}" class="btn btn-danger">Delete</a>
+                  </div>
+                  {% endif %}
+                {% endif %}
     </div>
 </div>
 
