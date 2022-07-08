@@ -10,8 +10,8 @@
             <form method="POST" enctype="multipart/form-data">
                 {%csrf_token%}
                 <div class="text-delete">
-                    <button class="btn btn-danger"> Yes</button>
-                    <a href="{% url 'home' %}" class="btn btn-success"> No</a>
+                    <button class="btn btn-danger"> Yes, delete the review</button>
+                    <a href="{% url 'detail-review' post.pk %}" class="btn btn-success"> No, take me back </a>
                 </div>
             </form>
         </div>

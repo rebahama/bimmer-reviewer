@@ -93,6 +93,7 @@ transform: scale(1);
 }
 .detail-review-card{
     width: 35%;
+    padding: 40px;
 }
 .detail-img-container{
     display: flex;
@@ -109,4 +110,10 @@ transform: scale(2);
 transform: scale(1.1);
 }
 }
+/*style the comments*/
+.comments{
+    display: flex;
+    flex-direction: column;
+}
+
 
