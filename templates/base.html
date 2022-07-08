@@ -26,23 +26,23 @@
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="{% url 'homepage' %}">Home</a>
             </li>
-            {% if user.is_authenticated %}
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="{% url 'create-review' %}">Create review</a>
-            </li>
-            {% endif %}
-            {% if user.is_authenticated %}
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="{% url 'account_logout' %}">Log out</a>
-            </li>
-            {% else %}
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="{% url 'account_login' %}">Log in</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="{% url 'account_signup' %}">Register account</a>
-            </li>
-            {% endif %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <!--Dropdown navbar-->
+                Account
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% if user.is_authenticated %}
+                <li><a class="dropdown-item" href="{% url 'create-review' %}">Create a review</a></li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log out</a></li>
+                {% else %}
+                <li><a class="dropdown-item" href="{% url 'account_login' %}">Log in</a></li>
+                <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register account</a> </li>
+                {% endif %}
+              </ul>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
