@@ -34,7 +34,7 @@ class UpdateReview(UpdateView):
     """
     model = Post
     template_name = 'update-review.html'
-    fields = ['title', 'body', 'image']
+    fields = ['title', 'year', 'body', 'image']
 
 
 class DeleteReview(DeleteView):

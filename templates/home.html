@@ -10,7 +10,12 @@
         <div class="card-header bg-dark text-white text-center">
           <h3>{{post.title}} </h3>
         </div>
-          <img src="{{post.image.url}}" class="card-img-top" alt="picture of bmw car" width="200" height="300">
+        <!--If a picture is not uploaded a default image will appear-->
+        {% if "placeholder" in post.image.url %}
+         <img src="/static/images/dashboard.jpg" class="card-img-top" alt="picture of bmw car" width="200" height="300">
+        {% else %}
+         <img src="{{post.image.url}}" class="card-img-top" alt="picture of bmw car" width="200" height="300">
+        {% endif %}
         <div class="card-body">
           <hr>
           <p class="card-text"> {{post.body}}......... </p>
