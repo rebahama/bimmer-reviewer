@@ -8,6 +8,8 @@ from django.urls import reverse
 
 class Post(models.Model):
     """ Create a model database for creating a post
+        adding a tuple so that the user can pre choose
+        in a dropdown window what year they want to post.
 """
     ENGINE_YEAR = (
         ('2000', '2000'),
@@ -47,3 +49,13 @@ class Post(models.Model):
     def get_absolute_url(self):
         """ Return to the html file below after POST the data"""
         return reverse('home')
+
+
+class Comments(models.Model):
+    post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE)
+    author = models.CharField(max_length=255)
+    body = models.TextField()
+    date_comment = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return str(self.post)

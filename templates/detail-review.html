@@ -40,7 +40,9 @@
                 
             </div>
         </div>
-        <h3 class="comments"> this is a comment </h3>
+        <h3 class="comments"> this is a comment {%for comment in post.comments.all%} </h3>
+        {{comment.body}}
+        {%endfor%}
     </div>
 </div>
 
