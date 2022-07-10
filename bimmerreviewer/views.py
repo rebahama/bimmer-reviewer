@@ -46,7 +46,12 @@ class DeleteReview(DeleteView):
 
 
 class AddComment(CreateView):
-    """Adding comments to a review"""
+    """Adding comments to a review the function that check
+    if form is valid takes the primary key of the post_id 
+    to determine what post is in the url"""
     model = Comments
     template_name = 'add-comments.html'
-    fields = ['author', 'post', 'body']
+    fields = ['author', 'body']
+    def form_valid(self, form):
+        form.instance.post_id = self.kwargs['pk']
+        return super().form_valid(form)
