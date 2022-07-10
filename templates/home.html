@@ -2,35 +2,36 @@
   {% extends 'base.html' %}
   {% block content %}
   <!--Loop thorugh the database and show it with cards-->
-  <button id="hide-btn" class="btn btn-primary"> hide/show</button>
   <div class="row row-cols-1 row-cols-md-4 g-4">
     {% for post in object_list %}
     <div class="col-md-4">
-      <div class="card mb-3 shadow p-2 hide">
+      <div class="card mb-3 shadow p-2">
         <div class="card-header bg-dark text-white text-center">
           <h3>{{post.title}} </h3>
         </div>
         <!--If a picture is not uploaded a default image will appear-->
         {% if "placeholder" in post.image.url %}
-         <img src="/static/images/dashboard.jpg" class="card-img-top" alt="picture of bmw car" width="200" height="300">
+        <img src="/static/images/dashboard.jpg" class="card-img-top" alt="picture of bmw car" width="200" height="300">
         {% else %}
-         <img src="{{post.image.url}}" class="card-img-top" alt="picture of bmw car" width="200" height="300">
+        <img src="{{post.image.url}}" class="card-img-top" alt="picture of bmw car" width="200" height="300">
         {% endif %}
         <div class="card-body">
+          <ul>
+            <li class="list-group-item">Year: {{post.year}}</li>
+            <li class="list-group-item">Price: 100 </li>
+          </ul>
           <hr>
-          <p class="card-text"> {{post.body}}......... </p>
           <div class="view-btn">
             <a href="{% url 'detail-review' post.pk %}" class="btn btn-danger btn-size">View review</a>
           </div>
           <hr>
           <p class="card-text"><small class="text-muted">Date: {{post.create_date}} </small></p>
-          <p class="card-text"><small class="text-muted">Created by {{post.author.username}} Date: {{post.create_date}} </small></p>
+          <p class="card-text"><small class="text-muted">Created by {{post.author.username}} Date: {{post.create_date}}
+            </small></p>
         </div>
       </div>
     </div>
     {% endfor %}
   </div>
-
-
   {% endblock %}
 </div>

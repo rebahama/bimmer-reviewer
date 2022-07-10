@@ -1,9 +1,10 @@
-// shows and hide the elements
-let hide = document.querySelectorAll('.hide')
+// shows and hide the comments in the detail review page
 let btn = document.getElementById('hide-btn');
-
-btn.addEventListener('click', function clickIt(){
-
+if(btn){
+btn.addEventListener('click', clickIt)
+}
+function clickIt(){
+    let hide = document.querySelectorAll('.hide');
     for (let i = 0; i < hide.length; i++) {
         if (hide[i].style.display==="none")
         {
@@ -11,9 +12,14 @@ btn.addEventListener('click', function clickIt(){
         }
         else{
             hide[i].style.display="none"
-        }
-        
-        
+        }   
     }
-    
-})
+}
+
+
+
+
+
+
+
+

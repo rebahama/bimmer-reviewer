@@ -42,19 +42,23 @@
         <hr>
     </div>
 </div>
-<button id="hide-btn-comments" class="btn btn-primary"> Hide/Show</button>
+{% if not post.comments.all %}
 <div class="row">
-    <h5 class="card-title">Comments:</h5>
-    <div class="col-sm-3 p-2 bg-primary comment-card" >
-        {%for comment in post.comments.all%}
-        <div class="card m-3">
+    <h5 class="card-title">No comments yet.....</h5>
+        {% else %}
+        <div class="col-sm-3 p-2 comment-card" ></div>
+        <button id="hide-btn" class="btn btn-primary"> Hide/Show Comments</button>
+        <h5 class="card-title">Comments</h5>
+        {% for comment in post.comments.all %}
+        <div class="card m-3 hide">
             <div class="card-body">
               <h6 class="card-subtitle mb-2 text-muted"> User: {{comment.author}}</h6>
               <p class="card-text"> {{comment.body}}</p>
               <small> {{comment.date_comment}}</small>
             </div>
           </div>
-        {%endfor%}
+        {% endfor %}
+        {% endif %}
 </div>
 </div>
 
