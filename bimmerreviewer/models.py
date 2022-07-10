@@ -36,12 +36,16 @@ class Post(models.Model):
         ('2021', '2021'),
         ('2022', '2022'),
     )
+
     title = models.CharField(max_length=250, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     year = models.CharField(max_length=10, choices=ENGINE_YEAR, default='Year')
+    price = models.IntegerField(blank=True, default=0)
     image = CloudinaryField('image', default='placeholder', null=False)
     body = models.TextField(max_length=1500)
     create_date = models.DateTimeField(auto_now_add=True)
+    like = models.ManyToManyField(User, related_name='review_like', blank=True)
+    approved = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title + '  ' + str(self.author)
@@ -56,6 +60,7 @@ class Comments(models.Model):
     author = models.CharField(max_length=255)
     body = models.TextField()
     date_comment = models.DateTimeField(auto_now_add=True)
+    approve = models.BooleanField(default=False)
 
     def __str__(self):
         return str(self.post)
