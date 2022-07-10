@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from . models import Post
+from . models import Post, Comments
 
 
 def homepage(request):
@@ -43,3 +43,10 @@ class DeleteReview(DeleteView):
     template_name = 'delete-review.html'
     fields = ['title', 'body', 'image']
     success_url = reverse_lazy('home')
+
+
+class AddComment(CreateView):
+    """Adding comments to a review"""
+    model = Comments
+    template_name = 'add-comments.html'
+    fields = ['author', 'post', 'body']

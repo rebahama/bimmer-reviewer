@@ -59,3 +59,7 @@ class Comments(models.Model):
 
     def __str__(self):
         return str(self.post)
+
+    def get_absolute_url(self):
+        """ Return to the html file below after POST the data"""
+        return reverse('home')

@@ -12,4 +12,6 @@ urlpatterns = [
     path('update-reviews/<int:pk>', views.UpdateReview.as_view(), name='update-review'),
     path('delete-reviews/<int:pk>', views.DeleteReview.as_view(), name='delete-review'),
     path('accounts/', include('allauth.urls')),
+    path('review/<int:pk>/comment', views.AddComment.as_view(), name='add-comment'),
+
 ]

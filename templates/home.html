@@ -17,17 +17,16 @@
         {% endif %}
         <div class="card-body">
           <ul>
-            <li class="list-group-item">Year: {{post.year}}</li>
             <li class="list-group-item">Price: 100 </li>
+            <li class="list-group-item">Year: {{post.year}}</li>
+            <li class="list-group-item">Fuel type:</li>
           </ul>
           <hr>
           <div class="view-btn">
             <a href="{% url 'detail-review' post.pk %}" class="btn btn-danger btn-size">View review</a>
           </div>
           <hr>
-          <p class="card-text"><small class="text-muted">Date: {{post.create_date}} </small></p>
-          <p class="card-text"><small class="text-muted">Created by {{post.author.username}} Date: {{post.create_date}}
-            </small></p>
+          <p class="card-text"><small class="text-muted">Created by {{post.author.username}} Date: {{post.create_date}}</small></p>
         </div>
       </div>
     </div>

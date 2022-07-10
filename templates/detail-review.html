@@ -19,9 +19,9 @@
                             consequuntur, unde odio laborum similique perspiciatis aut sint alias blanditiis.</p>
                         <div class="card">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Year: {{post.year}}</li>
                                 <li class="list-group-item">Price</li>
-                                <li class="list-group-item">Engine</li>
+                                <li class="list-group-item">Year: {{post.year}}</li>
+                                <li class="list-group-item">Fuel type:</li>
                             </ul>
                         </div>
                     </div>
@@ -34,7 +34,6 @@
                      </div>
                      {% endif %}
                     {% endif %}
-                    <p class="card-text"> <a href="#">Add a comment</a> </p>
                     <small> post created by {{post.author}} {{post.create_date}}</small>
                 </div>
             </div>
@@ -42,6 +41,7 @@
         <hr>
     </div>
 </div>
+<p class="card-text"> <a href="{% url 'add-comment' post.pk %}">Add a comment</a> </p>
 {% if not post.comments.all %}
 <div class="row">
     <h5 class="card-title">No comments yet.....</h5>
