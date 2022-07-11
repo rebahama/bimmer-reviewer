@@ -50,6 +50,9 @@ class Post(models.Model):
     def __str__(self):
         return self.title + '  ' + str(self.author)
 
+    def all_likes(self):
+        return self.like.count()
+
     def get_absolute_url(self):
         """ Return to the html file below after POST the data"""
         return reverse('home')

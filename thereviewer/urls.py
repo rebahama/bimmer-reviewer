@@ -13,5 +13,5 @@ urlpatterns = [
     path('delete-reviews/<int:pk>', views.DeleteReview.as_view(), name='delete-review'),
     path('accounts/', include('allauth.urls')),
     path('review/<int:pk>/comment', views.AddComment.as_view(), name='add-comment'),
-
+    path('likepost/<int:pk>', views.LikeReview, name='like_review'),
 ]

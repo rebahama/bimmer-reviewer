@@ -1,6 +1,7 @@
-from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from django.urls import reverse_lazy
+from django.shortcuts import render, get_object_or_404
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, View
+from django.urls import reverse_lazy, reverse
+from django.http import HttpResponseRedirect
 from . models import Post, Comments
 
 
@@ -9,8 +10,18 @@ def homepage(request):
     return render(request, 'index.html')
 
 
+def LikeReview(request, pk):
+    """Retrive the id of post that is renderd and then"
+        add a like to that current user with the refrence
+        of the post.id number
+    """
+    post = get_object_or_404(Post, id=request.POST.get('post_like_id'))
+    post.like.add(request.user)
+    return HttpResponseRedirect(reverse('detail-review', args=[str(pk)]))
+
+
 class Firstview(ListView):
-    """Show all the data from the queryset """
+    """Show all the data from the queryset only if admin approves it """
     queryset = Post.objects.filter(approved=True)
     template_name = 'home.html'
 
@@ -29,6 +40,7 @@ class CreateReview(CreateView):
     model = Post
     template_name = 'create-review.html'
     fields = ['title', 'price', 'year', 'body', 'image']
+
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
@@ -59,7 +71,7 @@ class AddComment(CreateView):
     template_name = 'add-comments.html'
     fields = ['author', 'body']
 
-
     def form_valid(self, form):
         form.instance.post_id = self.kwargs['pk']
         return super().form_valid(form)
+
