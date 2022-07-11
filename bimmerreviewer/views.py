@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, View
 from django.urls import reverse_lazy, reverse
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from . models import Post, Comments
 
 
@@ -16,7 +16,16 @@ def LikeReview(request, pk):
         of the post.id number
     """
     post = get_object_or_404(Post, id=request.POST.get('post_like_id'))
-    post.like.add(request.user)
+    have_liked = False
+    if post.like.filter(id=request.user.id).exists():
+        post.like.remove(request.user)
+        have_liked = False
+        
+
+    else:
+        post.like.add(request.user)
+        have_liked = True
+    
     return HttpResponseRedirect(reverse('detail-review', args=[str(pk)]))
 
 
@@ -31,6 +40,8 @@ class DetailReview(DetailView):
     on the "Firstview"""
     model = Post
     template_name = 'detail-review.html'
+
+
 
 
 class CreateReview(CreateView):

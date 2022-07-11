@@ -43,8 +43,9 @@
 </div>
 <form action="{% url 'like_review' post.pk %}" method="POST">
     {% csrf_token %}
-    <button type="submit" name="post_like_id" value="{{post.id}}"> Like---{{object.all_likes}}</button>
+    <button type="submit" name="post_like_id" value="{{post.id}}"> Like/Unlike</button>
 </form>
+<h3> Total likes: {{object.all_likes}} </h3>
 <p class="card-text"> <a href="{% url 'add-comment' post.pk %}">Add a comment</a> </p>
 {% if not post.comments.all %}
 <div class="row">
