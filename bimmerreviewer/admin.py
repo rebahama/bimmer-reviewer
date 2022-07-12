@@ -2,7 +2,9 @@
     and register it in the admin area.
 """
 from django.contrib import admin
-from .models import Post, Comments
+from .models import Post, Comments, Category
+
+admin.site.register(Category)
 
 
 @admin.register(Comments)

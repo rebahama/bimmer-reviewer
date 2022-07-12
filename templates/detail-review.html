@@ -21,7 +21,7 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">Price: {{post.price}}</li>
                                 <li class="list-group-item">Year: {{post.year}}</li>
-                                <li class="list-group-item">Fuel type:</li>
+                                <li class="list-group-item">Fuel type: {{post.fuel_type}}</li>
                             </ul>
                         </div>
                     </div>
@@ -46,6 +46,7 @@
     <button type="submit" name="post_like_id" value="{{post.id}}"> Like/Unlike</button>
 </form>
 <h3> Total likes: {{object.all_likes}} </h3>
+<h3>ta {{user.review_like}}</h3>
 <p class="card-text"> <a href="{% url 'add-comment' post.pk %}">Add a comment</a> </p>
 {% if not post.comments.all %}
 <div class="row">

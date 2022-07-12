@@ -10,7 +10,7 @@ def homepage(request):
     return render(request, 'index.html')
 
 
-def LikeReview(request, pk):
+def like_review(request, pk):
     """Retrive the id of post that is renderd and then"
         add a like to that current user with the refrence
         of the post.id number
@@ -20,12 +20,11 @@ def LikeReview(request, pk):
     if post.like.filter(id=request.user.id).exists():
         post.like.remove(request.user)
         have_liked = False
-        
 
     else:
         post.like.add(request.user)
         have_liked = True
-    
+
     return HttpResponseRedirect(reverse('detail-review', args=[str(pk)]))
 
 
@@ -33,6 +32,8 @@ class Firstview(ListView):
     """Show all the data from the queryset only if admin approves it """
     queryset = Post.objects.filter(approved=True)
     template_name = 'home.html'
+    hello = "this is a test"
+    extra_context = {'hello': hello}
 
 
 class DetailReview(DetailView):
@@ -42,15 +43,13 @@ class DetailReview(DetailView):
     template_name = 'detail-review.html'
 
 
-
-
 class CreateReview(CreateView):
     """ Create a new view and render it in the template below, request
     the user author from the method and use that user as the autor so that
     onyl that specifik user can post the review"""
     model = Post
     template_name = 'create-review.html'
-    fields = ['title', 'price', 'year', 'body', 'image']
+    fields = ['title', 'price', 'year','fuel_type', 'body', 'category', 'image']
 
     def form_valid(self, form):
         form.instance.author = self.request.user

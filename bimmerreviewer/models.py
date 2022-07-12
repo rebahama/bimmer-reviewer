@@ -6,6 +6,10 @@ from cloudinary.models import CloudinaryField
 from django.urls import reverse
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=200)
+
+
 class Post(models.Model):
     """ Create a model database for creating a post
         adding a tuple so that the user can pre choose
@@ -37,11 +41,26 @@ class Post(models.Model):
         ('2022', '2022'),
     )
 
+    FUEL_TYPE = (
+        ('Diesel', 'Diesel'),
+        ('Petrol', 'Petrol'),
+        ('Other',  'Other'),
+        )
+
+    CATEGORY_CAR = (
+        ('1-SERIES', '1-SERIES'),
+        ('3-SERIES', '3-SERIES'),
+        ('5-SERIES', '5-SERIES'),
+        ('OTHER', 'OTHER'),
+    )
+
     title = models.CharField(max_length=250, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     year = models.CharField(max_length=10, choices=ENGINE_YEAR, default='Year')
     price = models.IntegerField(blank=True, default=0)
+    fuel_type = models.CharField(max_length=10, choices=FUEL_TYPE, default='OTHER')
     image = CloudinaryField('image', default='placeholder', null=False)
+    category = models.CharField(max_length=200, choices=CATEGORY_CAR, default='OTHER')
     body = models.TextField(max_length=1500)
     create_date = models.DateTimeField(auto_now_add=True)
     like = models.ManyToManyField(User, related_name='review_like', blank=True)
