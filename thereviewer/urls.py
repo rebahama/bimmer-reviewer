@@ -14,4 +14,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('review/<int:pk>/comment', views.AddComment.as_view(), name='add-comment'),
     path('likepost/<int:pk>', views.like_review, name='like_review'),
+    path('category/<str:series>/', views.category_review, name='category-view'),
 ]

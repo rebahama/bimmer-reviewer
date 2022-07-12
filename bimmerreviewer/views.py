@@ -5,6 +5,11 @@ from django.http import HttpResponseRedirect, HttpResponse
 from . models import Post, Comments
 
 
+def category_review(request, series):
+    category_specefic = Post.objects.filter(category=series)
+    return render(request, 'categories.html', {'series': series, 'category_specefic': category_specefic})
+
+
 def homepage(request):
     """Render the html file below"""
     return render(request, 'index.html')
@@ -84,4 +89,5 @@ class AddComment(CreateView):
     def form_valid(self, form):
         form.instance.post_id = self.kwargs['pk']
         return super().form_valid(form)
+
 
