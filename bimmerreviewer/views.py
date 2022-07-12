@@ -1,13 +1,22 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, View
+from django.views.generic import (ListView, DetailView, CreateView,
+                                  UpdateView, DeleteView)
 from django.urls import reverse_lazy, reverse
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect
 from . models import Post, Comments
 
 
 def category_review(request, series):
+    """Method for rendering the html file below
+        and for grasping the category variable in the
+        model that is named Post. After grasping the category variable
+         put it in a context dicinoary so that we can use it as a template tag
+         in the html file"""
     category_specefic = Post.objects.filter(category=series)
-    return render(request, 'categories.html', {'series': series, 'category_specefic': category_specefic})
+
+    return render(request, 'categories.html',
+                           {'series': series,
+                            'category_specefic': category_specefic})
 
 
 def homepage(request):
@@ -54,7 +63,8 @@ class CreateReview(CreateView):
     onyl that specifik user can post the review"""
     model = Post
     template_name = 'create-review.html'
-    fields = ['title', 'price', 'year','fuel_type', 'body', 'category', 'image']
+    fields = ['title', 'price', 'year', 'fuel_type', 'body',
+              'category', 'image']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -89,5 +99,3 @@ class AddComment(CreateView):
     def form_valid(self, form):
         form.instance.post_id = self.kwargs['pk']
         return super().form_valid(form)
-
-

@@ -7,6 +7,7 @@ from django.urls import reverse
 
 
 class Category(models.Model):
+    """ A model that is created for a name category"""
     name = models.CharField(max_length=200)
 
 
@@ -58,9 +59,11 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     year = models.CharField(max_length=10, choices=ENGINE_YEAR, default='Year')
     price = models.IntegerField(blank=True, default=0)
-    fuel_type = models.CharField(max_length=10, choices=FUEL_TYPE, default='OTHER')
+    fuel_type = models.CharField(max_length=10,
+                                 choices=FUEL_TYPE, default='OTHER')
     image = CloudinaryField('image', default='placeholder', null=False)
-    category = models.CharField(max_length=200, choices=CATEGORY_CAR, default='OTHER')
+    category = models.CharField(max_length=200,
+                                choices=CATEGORY_CAR, default='OTHER')
     body = models.TextField(max_length=1500)
     create_date = models.DateTimeField(auto_now_add=True)
     like = models.ManyToManyField(User, related_name='review_like', blank=True)
@@ -70,6 +73,7 @@ class Post(models.Model):
         return self.title + '  ' + str(self.author)
 
     def all_likes(self):
+        """ Returns all the likes in form of numbers"""
         return self.like.count()
 
     def get_absolute_url(self):
@@ -78,7 +82,10 @@ class Post(models.Model):
 
 
 class Comments(models.Model):
-    post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE)
+    """ A model that is created for commenting on a post,
+        the post in this comment is related to the post model"""
+    post = models.ForeignKey(Post, related_name="comments",
+                             on_delete=models.CASCADE)
     author = models.CharField(max_length=255)
     body = models.TextField()
     date_comment = models.DateTimeField(auto_now_add=True)
