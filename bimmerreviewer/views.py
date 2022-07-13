@@ -52,15 +52,14 @@ class Firstview(ListView):
     queryset = Post.objects.filter(approved=True)
     ordering = ['-create_date']
     template_name = 'home.html'
-    hello = "this is a test"
-    extra_context = {'hello': hello}
-
 
 class DetailReview(DetailView):
     """ Only showing the detalied view when clicked
     on the "Firstview"""
     model = Post
     template_name = 'detail-review.html'
+    all_comments = Comments.objects.count()
+    extra_context = {'all_comments': all_comments}
 
 
 class CreateReview(CreateView):

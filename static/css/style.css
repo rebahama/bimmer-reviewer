@@ -8,6 +8,12 @@
 .navbar-toggler{
     color: #f4f4f4;
 }
+/*style the search symbol*/
+.search-symbol{
+    color: #f4f4f4;
+    font-size: 25px;
+    padding: 5px;
+}
 /*style the homepage*/
 .col{
     margin-top: 90px;
@@ -82,6 +88,9 @@ transform: scale(1);
 .btn-size{
     width: 200px;
 }
+.card-pos{
+    margin-top: 5%;
+}
 /*style the detailed review page*/
 .detail-review-container{
     margin-top: 4%;
@@ -118,10 +127,14 @@ transform: scale(1.1);
 /*style the footer*/
 .footer-social a{
     color: #f4f4f4;
+    
 }
 .footer-social i{
     margin: 10px;
     font-size: 35px;
+}
+.footer-social a:hover{
+    color: black;
 }
 
 
