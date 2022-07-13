@@ -91,7 +91,6 @@ class Comments(models.Model):
     date_comment = models.DateTimeField(auto_now_add=True)
     approve = models.BooleanField(default=False)
 
-
     def __str__(self):
         return str(self.post)
 

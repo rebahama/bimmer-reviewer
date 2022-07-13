@@ -47,6 +47,16 @@ def like_review(request, pk):
     return HttpResponseRedirect(reverse('detail-review', args=[str(pk)]))
 
 
+def search_list(request):
+    if request.method == "POST":
+        searching = request.POST.get('search-result')
+        search_post = Post.objects.filter(title__contains=searching)
+        return render(request, 'search-result.html',
+                     {'searching': searching, 'search_post': search_post})
+    else:
+        return render(request, 'search-result.html', {'searching': searching, 'search_post': search_post})
+
+
 class Firstview(ListView):
     """Show all the data from the queryset only if admin approves it """
     queryset = Post.objects.filter(approved=True)

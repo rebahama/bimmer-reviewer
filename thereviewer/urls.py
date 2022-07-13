@@ -25,4 +25,6 @@ urlpatterns = [
          name='like_review'),
     path('category/<str:series>/', views.category_review,
          name='category-view'),
+     path('search/', views.search_list,
+         name='search_list')
 ]
