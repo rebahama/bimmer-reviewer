@@ -1,4 +1,7 @@
-""" Creating urls to pass in a int or string value"""
+""" Creating urls to pass in a int or string value
+     and calling the views file where all the methods
+     are. Also nameing the url so that It can get acessed by the name
+"""
 from django.contrib import admin
 from django.urls import path, include
 from bimmerreviewer import views

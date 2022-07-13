@@ -1,3 +1,9 @@
+""" Importing all the methods to use for the view
+    this file is responsible for querying data and
+    displaying,delete,edit show the model that is created
+    in the model file
+"""
+
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import (ListView, DetailView, CreateView,
                                   UpdateView, DeleteView)
@@ -12,8 +18,7 @@ def category_review(request, series):
         model that is named Post. After grasping the category variable
          put it in a context dicinoary so that we can use it as a template tag
          in the html file"""
-    category_specefic = Post.objects.filter(category=series)
-
+    category_specefic = Post.objects.filter(category=series).order_by("-create_date")
     return render(request, 'categories.html',
                            {'series': series,
                             'category_specefic': category_specefic})
@@ -45,6 +50,7 @@ def like_review(request, pk):
 class Firstview(ListView):
     """Show all the data from the queryset only if admin approves it """
     queryset = Post.objects.filter(approved=True)
+    ordering = ['-create_date']
     template_name = 'home.html'
     hello = "this is a test"
     extra_context = {'hello': hello}
