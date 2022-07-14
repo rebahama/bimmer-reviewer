@@ -1,24 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load crispy_forms_tags %}
 <!--Update the database-->
 {% if user.is_authenticated %}
-           {% if user.id == post.author.id%}
-<div class="position-absolute top-50 start-50 translate-middle">
-    <h3 class="display-3"> Update review</h3>
-    <div class="form-group">
-        <table class="form-control">
-            <form method="POST" enctype="multipart/form-data">
-                {%csrf_token%}
-                {{form.as_table}}
-        </table>
-        <button class="btn btn-primary"> Update </button>
-        </form>
+{% if user.id == post.author.id%}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 p-4">
+            <h3 class="display-3"> Update review</h3>
+            <div class="form-group">
+                <form method="POST" class="form-control" enctype="multipart/form-data">
+                    {%csrf_token%}
+                    <div class="create-container">
+                        {{ form.title|as_crispy_field }}
+                        {{ form.year|as_crispy_field }}
+                        {{ form.body|as_crispy_field }}
+                        {{ form.image|as_crispy_field }}
+                        <button class="btn btn-primary m-3"> Update review</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
-    {% else %}
-    Please log in
-    {% endif %}
 {% else %}
-    Please log in
-    {% endif %}
+Please log in
+{% endif %}
+{% else %}
+Please log in
+{% endif %}
 {% endblock %}
