@@ -141,7 +141,22 @@ transform: scale(1.1);
 }
 /*style the login page*/
 .login-page{
-    margin-top: 10%;
+    margin-top: 8%;
+}
+.user-details input[type=text], input[type=password] {
+    margin: auto;
+    display: block;
+    min-width: 50%;
+    padding: 6px 10px;
+}
+.user-details label{
+    margin-left: 40%;
+    font-size: 20px;
+}
+.user-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 /*style the create-review page*/
 .create-container input[type=text] {
@@ -181,7 +196,7 @@ transform: scale(1.1);
 }
 .create-container input[type=file]{
     width: 100%;
-    background-color: #4CAF50;
+    background-color: #0d6efd;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
