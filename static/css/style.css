@@ -91,6 +91,9 @@ transform: scale(1);
 .card-pos{
     margin-top: 5%;
 }
+.card-category{
+    margin-top: 3%;
+}
 /*style the detailed review page*/
 .detail-review-container{
     margin-top: 4%;

@@ -19,7 +19,7 @@ class CommentAdmin(admin.ModelAdmin):
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'price', 'body', 'price', 'approved')
+    list_display = ('title', 'price', 'body', 'approved')
     list_filter = ('author', 'create_date')
     actions = ['approved_posts']
 

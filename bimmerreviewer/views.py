@@ -48,6 +48,10 @@ def like_review(request, pk):
 
 
 def search_list(request):
+    """ requst the html input that is named 'searched result' and 
+        put it in a variable, after query only the result that contains
+        the title variable from the models.py file.
+    """
     if request.method == "POST":
         searching = request.POST.get('search-result')
         search_post = Post.objects.filter(title__contains=searching)
@@ -75,7 +79,7 @@ class DetailReview(DetailView):
 class CreateReview(CreateView):
     """ Create a new view and render it in the template below, request
     the user author from the method and use that user as the autor so that
-    onyl that specifik user can post the review"""
+    only that specific user can post the review"""
     model = Post
     template_name = 'create-review.html'
     fields = ['title', 'price', 'year', 'fuel_type', 'body',
