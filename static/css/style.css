@@ -89,7 +89,7 @@ transform: scale(1);
     width: 200px;
 }
 .card-pos{
-    margin-top: 5%;
+    margin-top: 10%;
 }
 .card-category{
     margin-top: 3%;
@@ -141,16 +141,22 @@ transform: scale(1.1);
 }
 /*style the login page*/
 .login-page{
-    margin-top: 8%;
+    margin: auto;
+    padding: 40px;
 }
 .user-details input[type=text], input[type=password], input[type=email] {
     margin: auto;
-    display: block;
-    min-width: 50%;
-    padding: 6px 10px;
+    width: 100%;
+    display:block;
+    padding: 10px;
+    
+}
+.user-details {
+    display: flex;
+    align-items: center;
 }
 .user-details label{
-    margin-left: 40%;
+    text-align: center;
     font-size: 20px;
 }
 .user-details{
@@ -204,5 +210,23 @@ transform: scale(1.1);
     border-radius: 4px;
     cursor: pointer;
 }
+/*for screens below*/
+@media screen and (max-width: 1000px) {
+    .intro-text{
+        font-size: 90%;
+   
+    }
+    .top-text{
+        height: 100px;
+    }
+    .register-btn{
+        font-size: 90%;
+    }
+    .login-page{
+        margin: 10% 0 10% 0;
+        padding: 0;
+    }
+
+
 
 

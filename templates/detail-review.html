@@ -3,14 +3,14 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-sm-12 detail-review-container shadow-lg bg-secondary bg-gradient rounded">
+        <div class="col-sm-12 col-m-12 col-lg-12 detail-review-container shadow-lg bg-secondary bg-gradient rounded">
             <div class="detail-img-container">
                 {% if "placeholder" in post.image.url %}
                 <img src="/static/images/dashboard.jpg" class="img-fluid rounded animate-detail-img" width="400" height="500" alt="Picture of a dashboard">
                 {%else%}
                 <img src="{{post.image.url}}" class="img-fluid rounded animate-detail-img" width="400" height="500" alt="Picture of a dashboard">
                 {%endif%}
-                <div class="card detail-review-card">
+                <div class="card detail-review-card col-md-6">
                     <h4 class="card-title text-center bg-dark text-white text-center">{{post.title}}</h4>
                     <div class="card-body">
                         <p class="card-text">{{post.body}} Lorem ipsum dolor sit amet, consectetur adipisicing elit.

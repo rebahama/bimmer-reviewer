@@ -1,15 +1,12 @@
 {% extends "base.html" %}
-
 {% load i18n %}
-
 {% block head_title %}{% trans "Signup" %}{% endblock %}
-
 {% block content %}
 <div class="container">
   <div class="row login-page">
     <div class="col-md-6 offset-md-3 shadow p-3 rounded">
       <div class="user-details p-5">
-        <h1 class="text-center">{% trans "Sign Up" %}</h1>
+        <h1 class="text-center">{% trans "Register account" %}</h1>
         <p class="text-center">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign
             in</a>.{% endblocktrans %}</p>
         <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
@@ -24,5 +21,4 @@
     </div>
   </div>
 </div>
-
-  {% endblock %}
+{% endblock %}
