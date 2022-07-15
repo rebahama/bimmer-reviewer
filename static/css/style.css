@@ -105,6 +105,11 @@ transform: scale(1);
   padding: 20px;
   margin-top: 10%;
 }
+.sign-out{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 /*style the detailed review page*/
 .detail-review-container{
     margin-top: 4%;
