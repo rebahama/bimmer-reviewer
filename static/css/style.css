@@ -210,7 +210,7 @@ transform: scale(1.1);
     border-radius: 4px;
     cursor: pointer;
 }
-/*for screens below*/
+/*for screens below 1000 px*/
 @media screen and (max-width: 1000px) {
     .intro-text{
         font-size: 90%;
@@ -226,7 +226,31 @@ transform: scale(1.1);
         margin: 10% 0 10% 0;
         padding: 0;
     }
+    .detail-img-container{
+        justify-content: center;
+        flex-direction: column;
+    }
+    .detail-review-card{
+        width: 100%;
+        text-align: center;
+        margin-top: 10%;
+        padding: 0;
+    }
+    .img-fluid {
+        margin: auto;
+    }
+    
+}
+@media screen and (max-width: 450px) {
+    .img-fluid{
+        margin: 0;
+    }
+    .btn-change{
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+    }
 
 
-
+}
 

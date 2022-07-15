@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
+
     <div class="row">
         <div class="col-sm-12 col-m-12 col-lg-12 detail-review-container shadow-lg bg-secondary bg-gradient rounded">
             <div class="detail-img-container">
@@ -32,6 +32,7 @@
                         <a href="{% url 'update-review' post.pk %}" class="btn btn-primary">Update Review </a>
                         <a href="{% url 'delete-review' post.pk %}" class="btn btn-danger">Delete Review</a>
                      </div>
+
                      {% endif %}
                     {% endif %}
                     <small> post created by {{post.author}} {{post.create_date}}</small>
@@ -40,12 +41,11 @@
         </div>
         <hr>
     </div>
-</div>
+
 <form action="{% url 'like_review' post.pk %}" method="POST">
     {% csrf_token %}
     <button type="submit" class="text-white btn bg-primary" name="post_like_id" value="{{post.id}}">  <i class="fa-solid fa-thumbs-up"></i> Like/Unlike <p>{{object.all_likes}}</p> </button>
 </form>
-<h3>ta {{user.review_like}}</h3>
    <p>{{ all_comments }}</p>
 <p class="card-text"> <a href="{% url 'add-comment' post.pk %}">Add a comment</a> </p>
 {% if not post.comments.all %}
