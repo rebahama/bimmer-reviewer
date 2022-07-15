@@ -1,20 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
-
+{% load crispy_forms_tags %}
 <!--Position the form and render it-->
 {% if user.is_authenticated %}
-    <div class="position-absolute top-50 start-50 translate-middle">
-        <h3 class="display-3"> Add a comment</h3>
-        <div class="form-group">
-            <table class="form-control">
-                <form method="POST">
-                    {%csrf_token%}
-                    {{form.as_table}}
-            </table>
-            <button class="btn btn-primary"> Add comment </button>
-            </form>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 p-4">
+            <h4 class="display-3 text-center"> Add a comment</h3>
+                <div class="form-group shadow">
+                    <div class="form-group">
+                        <form method="POST" class="form-control">
+                            {%csrf_token%}
+                            <div class="create-container">
+                                {{ form.author|as_crispy_field }}
+                                {{ form.body|as_crispy_field }}
+                            </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary"> Add comment </button>
         </div>
+        </form>
     </div>
+</div>
+</div>
 {% else %}
 Please log in
 {% endif %}

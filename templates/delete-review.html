@@ -3,19 +3,23 @@
 
 {% if user.is_authenticated %}
            {% if user.id == post.author.id%}
-    <div class="position-absolute top-50 start-50 translate-middle">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 shadow-lg delete-review">
         <h3 class="display-3 text-center"> Delete review</h3>
         <div class="form-group">
-            <h3> You are about to delete this post, are you sure?</h3>
+            <h4 class="text-center"> You are about to delete this post with the title {{post.title}}, are you sure?</h3>
             <form method="POST" enctype="multipart/form-data">
                 {%csrf_token%}
                 <div class="text-delete">
+                    <a href="{% url 'detail-review' post.pk %}" class="btn btn-success move-btn"> No, take me back </a>
                     <button class="btn btn-danger"> Yes, delete the review</button>
-                    <a href="{% url 'detail-review' post.pk %}" class="btn btn-success"> No, take me back </a>
                 </div>
             </form>
         </div>
     </div>
+    </div>
+</div>
     {% else %}
     Please log in
     {% endif %}
