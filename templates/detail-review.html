@@ -28,10 +28,12 @@
                     <!--Only show if the user is logged in-->
                     {% if user.is_authenticated %}
                      {% if user.id == post.author.id%}
+                     <div class="btn-container">
                      <div class="btn-change">
                         <a href="{% url 'update-review' post.pk %}" class="btn btn-primary">Update Review </a>
-                        <a href="{% url 'delete-review' post.pk %}" class="btn btn-danger">Delete Review</a>
                      </div>
+                     <a href="{% url 'delete-review' post.pk %}" class="btn btn-danger">Delete Review</a>
+                    </div>
 
                      {% endif %}
                     {% endif %}

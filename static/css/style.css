@@ -27,6 +27,11 @@
     margin-top: 2%;
     height: 200px;
 }
+.btn-container{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
 /*create animation for image on homepage*/
 .hero{
     overflow: hidden;
