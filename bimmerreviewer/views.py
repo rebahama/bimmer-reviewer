@@ -39,11 +39,12 @@ def like_review(request, pk):
     if post.like.filter(id=request.user.id).exists():
         post.like.remove(request.user)
         have_liked = False
+        messages.success(request, "You have unliked this post")
 
     else:
         post.like.add(request.user)
         have_liked = True
-
+        messages.success(request, "You have liked this post")
     return HttpResponseRedirect(reverse('detail-review', args=[str(pk)]))
 
 
@@ -124,6 +125,7 @@ class AddComment(SuccessMessageMixin, CreateView):
     template_name = 'add-comments.html'
     fields = ['author', 'body']
     success_message = "Comment have been successfully added"
+
 
     def form_valid(self, form):
         form.instance.post_id = self.kwargs['pk']
