@@ -41,13 +41,15 @@
                 </div>
             </div>
         </div>
+        <a href="{% url 'home'%}" class="btn btn-success move-btn col-md-2 col-sm-2"> Back </a>
         <hr>
     </div>
-
+{%if user.is_authenticated%}
 <form action="{% url 'like_review' post.pk %}" method="POST">
     {% csrf_token %}
     <button type="submit" class="text-white btn bg-primary" name="post_like_id" value="{{post.id}}">  <i class="fa-solid fa-thumbs-up"></i> Like/Unlike <p>{{object.all_likes}}</p> </button>
 </form>
+{% endif %}
    <p>{{ all_comments }}</p>
 <p class="card-text"> <a href="{% url 'add-comment' post.pk %}">Add a comment</a> </p>
 {% if not post.comments.all %}
