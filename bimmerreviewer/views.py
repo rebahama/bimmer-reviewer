@@ -3,7 +3,7 @@
     displaying,delete,edit show the model that is created
     in the model file
 """
-
+from django.contrib.messages.views import SuccessMessageMixin, messages
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import (ListView, DetailView, CreateView,
                                   UpdateView, DeleteView)
@@ -48,7 +48,7 @@ def like_review(request, pk):
 
 
 def search_list(request):
-    """ requst the html input that is named 'searched result' and 
+    """ requst the html input that is named 'searched result' and
         put it in a variable, after query only the result that contains
         the title variable from the models.py file.
     """
@@ -67,6 +67,7 @@ class Firstview(ListView):
     ordering = ['-create_date']
     template_name = 'home.html'
 
+
 class DetailReview(DetailView):
     """ Only showing the detalied view when clicked
     on the "Firstview"""
@@ -76,7 +77,7 @@ class DetailReview(DetailView):
     extra_context = {'all_comments': all_comments}
 
 
-class CreateReview(CreateView):
+class CreateReview(SuccessMessageMixin, CreateView):
     """ Create a new view and render it in the template below, request
     the user author from the method and use that user as the autor so that
     only that specific user can post the review"""
@@ -84,13 +85,14 @@ class CreateReview(CreateView):
     template_name = 'create-review.html'
     fields = ['title', 'price', 'year', 'fuel_type', 'body',
               'category', 'image']
+    success_message = "Review have been successfully created, awaiting admin approval"
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
 
-class UpdateReview(UpdateView):
+class UpdateReview(SuccessMessageMixin, UpdateView):
     """ Update the view and the fileds that are below
     """
     model = Post
@@ -98,16 +100,22 @@ class UpdateReview(UpdateView):
     fields = ['title', 'price', 'year', 'fuel_type', 'body',
               'category', 'image']
 
+    success_message = "Review have been successfully updated"
 
-class DeleteReview(DeleteView):
+
+class DeleteReview(SuccessMessageMixin, DeleteView):
     """Delete the view that is shown"""
     model = Post
     template_name = 'delete-review.html'
     fields = ['title', 'body', 'image']
     success_url = reverse_lazy('home')
 
+    def get_success_url(self):
+        messages.success(self.request, "Review have been successfully deleted")
+        return reverse('home')
 
-class AddComment(CreateView):
+
+class AddComment(SuccessMessageMixin, CreateView):
     """Adding comments to a review the function that check
     if form is valid takes the primary key of the post_id
     to determine what post is in the url and then
@@ -115,6 +123,7 @@ class AddComment(CreateView):
     model = Comments
     template_name = 'add-comments.html'
     fields = ['author', 'body']
+    success_message = "Comment have been successfully added"
 
     def form_valid(self, form):
         form.instance.post_id = self.kwargs['pk']
