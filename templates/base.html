@@ -42,6 +42,7 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% if user.is_authenticated %}
                 <li><a class="dropdown-item" href="{% url 'create-review' %}">Create a review</a></li>
+                <li><a class="dropdown-item" href="{% url 'user-reviews' %}">Show my reviews </a></li>
                 {% endif %}
                 {% if user.is_authenticated %}
                 <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log out</a></li>

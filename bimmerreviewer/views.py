@@ -69,6 +69,10 @@ class Firstview(ListView):
     template_name = 'home.html'
 
 
+class UserView(ListView):
+    queryset = Post.objects.filter(approved=True)
+    template_name = 'user-reviews.html'
+
 class DetailReview(DetailView):
     """ Only showing the detalied view when clicked
     on the "Firstview"""
