@@ -4,7 +4,7 @@
     <!--Loop thorugh the database and show it with cards-->
     {%if searching %}
     <div class="row row-cols-1 row-cols-md-8 g-4">
-      <h3 class="text-white"> You searched for {{searching}} .......</h3>
+      <h4 class="text-white text-center rounded opacity-75 bg-dark"> You searched for {{searching}}</h4>
       {% for post in search_post %}
       <div class="col-md-6 col-lg-4 card-pos">
         <div class="card mb-3 shadow p-2">
@@ -36,8 +36,11 @@
       </div>
       {% endfor %}
       {%else%}
-      
-      <h3> you did not search</h3>
+      <div class="row">
+        <div class="col-md-6 offset-md-4 shadow p-3 rounded text-white">
+      <h4> Please type something to start searching </h4>
+      </div>
+      </div>
       {%endif%}
     </div>
     {% endblock %}

@@ -1,8 +1,11 @@
-<div class="background-img d-flex flex-column min-vh-100">
+<div class="d-flex flex-column min-vh-100">
     {% extends 'base.html' %}
     {% block content %}
-    <!--Loop thorugh the database and show it with cards-->
     <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col-md-6 offset-md-3 shadow p-3 rounded text-dark">
+      <h3 class="text-center"> Created post reviews</h3>
+      </div>
+      <!--Loop thorugh the database and show it with cards-->
       {% for post in object_list %}
        {% if user.id == post.author.id%}
       <div class="col-md-6 col-lg-4 card-pos">

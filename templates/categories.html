@@ -1,11 +1,15 @@
-<div class="background-img d-flex flex-column min-vh-100">
+<div class="d-flex flex-column min-vh-100">
   {% extends 'base.html' %}
   {% block content %}
 <!--Loop thorugh the database and show it with cards-->
-<div class="row row-cols-1 row-cols-md-4 g-4">
-  {{series}}
+  <div class="row">
+    <div class="col-md-6 offset-md-3 shadow p-3 rounded text-white"> 
+        <h4 class="text-white text-center rounded opacity-75 bg-dark"> {{series}}</h4>
+  </div>
+  </div>
+ 
   {% for post in category_specefic %}
-  <div class="col-md-4 card-category">
+  <div class="col-md-4 offset-md-4 card-category">
     <div class="card mb-3 shadow p-2">
       <div class="card-header bg-dark text-white text-center">
         <h3>{{post.title}} </h3>
