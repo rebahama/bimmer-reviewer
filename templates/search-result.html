@@ -2,8 +2,9 @@
     {% extends 'base.html' %}
     {% block content %}
     <!--Loop thorugh the database and show it with cards-->
-    <h3 class="text-white"> You searched for {{searching}} .......</h3>
-    <div class="row row-cols-1 row-cols-md-4 g-4">
+    {%if searching %}
+    <div class="row row-cols-1 row-cols-md-8 g-4">
+      <h3 class="text-white"> You searched for {{searching}} .......</h3>
       {% for post in search_post %}
       <div class="col-md-6 col-lg-4 card-pos">
         <div class="card mb-3 shadow p-2">
@@ -31,35 +32,14 @@
             <p class="card-text"><small class="text-muted">Created by {{post.author.username}} Date: {{post.create_date}}</small></p>
           </div>
         </div>
+        
       </div>
       {% endfor %}
+      {%else%}
+      
+      <h3> you did not search</h3>
+      {%endif%}
     </div>
     {% endblock %}
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{%if searching %}
-<h3 class="text-white"> You searched for {{searching}} .......</h3>
-
-{% for searched in search_post%}
-{{searched}}
-{%endfor%}
-
-
-{%else%}
-<h3> You forgot to search</h3>
-{%endif%}
+</div>
