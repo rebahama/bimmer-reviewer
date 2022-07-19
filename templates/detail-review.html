@@ -1,17 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="row">
-        <div class="col-sm-12 col-m-12 col-lg-12 detail-review-container shadow-lg bg-dark bg-gradient rounded">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col-md-6 offset-md-3 shadow p-3 rounded text-white border bg-dark">
+              <h3 class="text-center"> {{post.title}}</h3>
+            </div>
+        <div class="col-sm-12 col-xs-12 col-m-12 col-lg-12 detail-review-container shadow-lg bg-dark bg-gradient rounded">
             <div class="detail-img-container">
                 {% if "placeholder" in post.image.url %}
-                <img src="/static/images/dashboard.jpg" class="img-fluid rounded animate-detail-img" width="400" height="500" alt="Picture of a dashboard">
+                <img src="/static/images/dashboard.jpg" class="img-fluid rounded animate-detail-img border" width="600" height="500" alt="Picture of a dashboard">
                 {%else%}
-                <img src="{{post.image.url}}" class="img-fluid rounded animate-detail-img" width="400" height="500" alt="Picture of a dashboard">
+                <img src="{{post.image.url}}" class="img-fluid rounded animate-detail-img" width="600" height="500" alt="Picture of a dashboard">
                 {%endif%}
-                <div class="card detail-review-card col-md-6">
+                <div class="card detail-review-card col-md-4">
                     <h4 class="card-title text-center bg-dark text-white text-center">{{post.title}}</h4>
                     <div class="card-body">
                         <p class="card-text">{{post.body}} Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Tenetur
+                            distinctio quo, quaerat at vero consequatur voluptates repellendus vitae aperiam! Molestias
+                            consequuntur, unde odio laborum similique perspiciatis aut sint alias blanditiis.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Tenetur
+                            distinctio quo, quaerat at vero consequatur voluptates repellendus vitae aperiam! Molestias
+                            consequuntur, unde odio laborum similique perspiciatis aut sint alias blanditiis.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Tenetur
+                            distinctio quo, quaerat at vero consequatur voluptates repellendus vitae aperiam! Molestias
+                            consequuntur, unde odio laborum similique perspiciatis aut sint alias blanditiis.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             Tenetur
                             distinctio quo, quaerat at vero consequatur voluptates repellendus vitae aperiam! Molestias
                             consequuntur, unde odio laborum similique perspiciatis aut sint alias blanditiis.</p>
@@ -39,16 +52,15 @@
                 </div>
             </div>
         </div>
-        <a href="{% url 'home'%}" class="btn btn-success move-btn col-md-2 col-sm-2"> Back </a>
-        <hr>
+        <a href="{% url 'home'%}" class="btn btn-success move-btn col-md-2 col-sm-2"> Back to all reviews </a>
     </div>
+    <hr>
 {%if user.is_authenticated%}
 <form action="{% url 'like_review' post.pk %}" method="POST">
     {% csrf_token %}
     <button type="submit" class="text-white btn bg-primary" name="post_like_id" value="{{post.id}}">  <i class="fa-solid fa-thumbs-up"></i> Like/Unlike <p>{{object.all_likes}}</p> </button>
 </form>
 {% endif %}
-   <p>{{ all_comments }}</p>
 <p class="card-text"> <a href="{% url 'add-comment' post.pk %}">Add a comment</a> </p>
 {% if not post.comments.all %}
 <div class="row">
