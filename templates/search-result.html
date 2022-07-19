@@ -1,4 +1,4 @@
-<div class="background-img d-flex flex-column min-vh-100">
+<div class="d-flex flex-column min-vh-100">
     {% extends 'base.html' %}
     {% block content %}
     <!--Loop thorugh the database and show it with cards-->
@@ -37,7 +37,7 @@
       {% endfor %}
       {%else%}
       <div class="row">
-        <div class="col-md-6 offset-md-4 shadow p-3 rounded text-white mt-md-5">
+        <div class="col-md-6 offset-md-3 shadow p-3 rounded text-white text-center bg-dark mt-md-5">
       <h4> Please type something to start searching </h4>
       </div>
       </div>

@@ -35,15 +35,12 @@ def like_review(request, pk):
         of the post.id number
     """
     post = get_object_or_404(Post, id=request.POST.get('post_like_id'))
-    have_liked = False
     if post.like.filter(id=request.user.id).exists():
         post.like.remove(request.user)
-        have_liked = False
         messages.success(request, "You have unliked this post")
 
     else:
         post.like.add(request.user)
-        have_liked = True
         messages.success(request, "You have liked this post")
     return HttpResponseRedirect(reverse('detail-review', args=[str(pk)]))
 
@@ -57,9 +54,10 @@ def search_list(request):
         searching = request.POST.get('search-result')
         search_post = Post.objects.filter(title__contains=searching)
         return render(request, 'search-result.html',
-                     {'searching': searching, 'search_post': search_post})
+                    {'searching': searching, 'search_post': search_post})
     else:
-        return render(request, 'search-result.html', {'searching': searching, 'search_post': search_post})
+        return render(request, 'search-result.html',
+                    {'searching': searching, 'search_post': search_post})
 
 
 class Firstview(ListView):
@@ -79,8 +77,6 @@ class DetailReview(DetailView):
     on the "Firstview"""
     model = Post
     template_name = 'detail-review.html'
-    all_comments = Comments.objects.count()
-    extra_context = {'all_comments': all_comments}
 
 
 class CreateReview(SuccessMessageMixin, CreateView):

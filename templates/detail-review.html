@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
-
 {% block content %}
-
     <div class="row">
         <div class="col-sm-12 col-m-12 col-lg-12 detail-review-container shadow-lg bg-dark bg-gradient rounded">
             <div class="detail-img-container">
@@ -54,7 +52,7 @@
 <p class="card-text"> <a href="{% url 'add-comment' post.pk %}">Add a comment</a> </p>
 {% if not post.comments.all %}
 <div class="row">
-      <h4 class="text-white text-center rounded opacity-75 bg-dark"> No comments yet</h4>
+      <h4 class="text-white text-center rounded opacity-75 bg-dark"> No comments yet...</h4>
         {% else %}
         <div class="col-sm-3 p-2 comment-card" ></div>
         <button id="hide-btn" class="btn btn-primary"> Hide/Show Comments</button>
@@ -71,5 +69,4 @@
         {% endif %}
 </div>
 </div>
-
 {% endblock %}
