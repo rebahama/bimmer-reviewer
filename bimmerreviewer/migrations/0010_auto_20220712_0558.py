@@ -25,6 +25,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='post',
             name='fuel_type',
-            field=models.CharField(choices=[('Diesel', 'Diesel'), ('Petrol', 'Petrol'), ('Other', 'Other')], default='OTHER', max_length=10),
+            field=models.CharField(choices=[('Diesel', 'Diesel'),
+              ('Petrol', 'Petrol'),
+              ('Other', 'Other')], default='OTHER', max_length=10),
         ),
     ]

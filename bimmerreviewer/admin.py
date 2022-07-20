@@ -12,7 +12,7 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ('author', 'body', 'approve')
     list_filter = ('author', 'date_comment')
     actions = ['approve_comment']
-    
+
     def approve_comment(self, request, queryset):
         queryset.update(approve=True)
 

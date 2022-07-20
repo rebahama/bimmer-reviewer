@@ -54,10 +54,10 @@ def search_list(request):
         searching = request.POST.get('search-result')
         search_post = Post.objects.filter(title__contains=searching)
         return render(request, 'search-result.html',
-                    {'searching': searching, 'search_post': search_post})
+                      {'searching': searching, 'search_post': search_post})
     else:
         return render(request, 'search-result.html',
-                    {'searching': searching, 'search_post': search_post})
+                      {'searching': searching, 'search_post': search_post})
 
 
 class Firstview(ListView):
@@ -68,7 +68,12 @@ class Firstview(ListView):
 
 
 class UserView(ListView):
+    """ Render the view below on the user review html file
+        this queryset shows the posts that have been created
+        by the user.
+    """
     queryset = Post.objects.filter(approved=True)
+    ordering = ['-create_date']
     template_name = 'user-reviews.html'
 
 
@@ -87,7 +92,7 @@ class CreateReview(SuccessMessageMixin, CreateView):
     template_name = 'create-review.html'
     fields = ['title', 'price', 'year', 'fuel_type', 'body',
               'category', 'image']
-    success_message = "Review have been successfully created, awaiting admin approval"
+    success_message = 'Review successfully created awaiting admin approval'
 
     def form_valid(self, form):
         form.instance.author = self.request.user

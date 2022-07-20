@@ -11,24 +11,26 @@
                 <h4 class="text-center"> Welcome to the create review page, this is where your review is created ,
                     simply put in the information in the input fields and when your done click "upload review".
                     When you have uploaded the review admin will inspect the review and if your post
-                    have relevant content it will be approved and showed on the page "Show all reviews", if the review contains
+                    have relevant content it will be approved and showed on the page "Show all reviews", if the review
+                    contains
                     graphic pictures or words it will be deleted and not approved. If you choose to
-                    not upload a picture a default picture will be uploaded for you, you can´t create a title if it alredy exists, your
+                    not upload a picture a default picture will be uploaded for you, you can´t create a title if it
+                    alredy exists, your
                     title must be unique.
                 </h4>
-                </div>
+            </div>
             <div class="form-group shadow">
                 <form method="POST" class="form-control" enctype="multipart/form-data">
                     {%csrf_token%}
                     <div class="create-container">
-                    {{ form.title|as_crispy_field }}
-                    {{ form.price|as_crispy_field }}
-                    {{ form.year|as_crispy_field }}
-                    {{ form.fuel_type|as_crispy_field }}
-                    {{ form.category|as_crispy_field }}
-                    {{ form.body|as_crispy_field }}
-                    {{ form.image|as_crispy_field }}
-                    <button class="btn btn-primary m-3"> Upload review</button>
+                        {{ form.title|as_crispy_field }}
+                        {{ form.price|as_crispy_field }}
+                        {{ form.year|as_crispy_field }}
+                        {{ form.fuel_type|as_crispy_field }}
+                        {{ form.category|as_crispy_field }}
+                        {{ form.body|as_crispy_field }}
+                        {{ form.image|as_crispy_field }}
+                        <button class="btn btn-primary m-3"> Upload review</button>
                     </div>
                 </form>
             </div>
@@ -38,8 +40,8 @@
 {% else %}
 <div class="row row-cols-1 row-cols-md-4">
     <div class="col-md-6 offset-md-3 shadow p-3 rounded text-white bg-dark mt-md-5">
-  <h3 class="text-center"> Please <a href="{% url 'account_login' %}">log in</a> to perform this action </h3>
-  </div>
+        <h3 class="text-center"> Please <a href="{% url 'account_login' %}">log in</a> to perform this action </h3>
+    </div>
 </div>
 {% endif %}
 {% endblock %}

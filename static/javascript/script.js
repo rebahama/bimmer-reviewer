@@ -56,8 +56,6 @@ window.onload = function(){
       reveal[i].style.display="none";
     }
     }
-    
-    
     };
 
 

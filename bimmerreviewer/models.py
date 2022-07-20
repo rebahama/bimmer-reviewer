@@ -58,7 +58,7 @@ class Post(models.Model):
     title = models.CharField(max_length=250, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     year = models.CharField(max_length=10, choices=ENGINE_YEAR, default='Year')
-    price = models.IntegerField(blank=True, default=0)
+    price = models.PositiveIntegerField(blank=True, default=0)
     fuel_type = models.CharField(max_length=10,
                                  choices=FUEL_TYPE, default='OTHER')
     image = CloudinaryField('image', default='placeholder', null=False)
