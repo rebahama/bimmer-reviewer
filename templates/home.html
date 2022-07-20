@@ -6,6 +6,7 @@
       <h3 class="text-white text-center rounded opacity-75 bg-dark"> All reviews</h3>
     </div>
   </div>
+  <button id="swipe-up-btn"> Hide</button>
   <!--Loop thorugh the database and show it with cards-->
   <div class="row row-cols-1 row-cols-md-4 g-4">
     {% for post in object_list %}
@@ -38,7 +39,7 @@
       </div>
     </div>
     {% endfor %}
-    <button id="scroll-btn" class="btn btn-primary mb-2 offset-md-4 offset-lg-4"> Back to top </button>
+    <button id="scroll-btn" class="btn btn-primary mb-2 offset-md-4 offset-lg-4 swipe-up"> Back to top </button>
   </div>
   {% endblock %}
 </div>

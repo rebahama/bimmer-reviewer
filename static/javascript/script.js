@@ -41,17 +41,18 @@ function topClickCategory(){
 }
 
 //Change colour of cards when clicked
+let hideAll=document.getElementById('swipe-up-btn')
 let reveal=document.querySelectorAll('.swipe-up')
 if(reveal){
-    window.addEventListener('click', scrollIt)
+    hideAll.addEventListener('click', scrollIt)
 }
 
 function scrollIt(){
 for (let i = 0; i < reveal.length; i++) {
-  if (reveal[i].style.backgroundColor==="white")
-     reveal[i].style.backgroundColor="blue"
+  if (reveal[i].style.display==="none")
+     reveal[i].style.display="block"
   else
-  reveal[i].style.backgroundColor="white"
+  reveal[i].style.display="none"
 }
 }
 
