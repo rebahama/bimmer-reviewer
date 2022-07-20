@@ -34,9 +34,12 @@
 }
 
 .btn-container {
-	display: flex;
-	flex-direction: column-reverse;
-	align-items: center;
+  display: flex;
+  align-content: space-between;
+  flex-direction: column;
+}
+.btn-container>a{
+	margin: 10px;
 }
 
 /*create animation for image on homepage*/

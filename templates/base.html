@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Review site for bmw fans.">
+  <!-- Text inside this block is custom and will be shown in every page depending on what is inside this block-->
   <title>
   {% block title %}
    Homepage 
@@ -28,7 +29,7 @@
         <form class="d-flex" method="POST" action="{% url 'search_list' %}" role="search">
           {% csrf_token %}
           <input class="form-control me-2" name="search-result" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-dark bg-light text-dark" type="submit">Search</button>
+          <button class="btn btn-outline-dark bg-light text-dark rounded" type="submit">Search</button>
         </form>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

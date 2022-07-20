@@ -8,8 +8,9 @@
     <div class="col-md-6 offset-md-3 shadow p-3 rounded text-white mt-md-5">
       <h3 class="text-white text-center rounded opacity-75 bg-dark"> All reviews</h3>
     </div>
+    <button id="swipe-up-btn" class="btn btn-primary col-md-4 col-sm-4 offset-md-4 offset-sm-4 mt-5 "> Hide/Show</button>
   </div>
-  <button id="swipe-up-btn"> Hide</button>
+  
   <!--Loop thorugh the database and show it with cards-->
   <div class="row row-cols-1 row-cols-md-4 g-4">
     {% for post in object_list %}
@@ -42,7 +43,7 @@
       </div>
     </div>
     {% endfor %}
-    <button id="scroll-btn" class="btn btn-primary mb-2 offset-md-4 offset-lg-4 swipe-up"> Back to top </button>
   </div>
+  <button id="scroll-btn" class="btn btn-primary mb-2 offset-md-10 offset-lg-4 swipe-up"> Back to top </button>
   {% endblock %}
 </div>

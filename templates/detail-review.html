@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% block title %}
+   Detailed review
+  {% endblock %}
 {% block content %}
 <div class="row">
     <div class="row row-cols-1 row-cols-md-4 g-4">
@@ -42,18 +45,6 @@
                             </ul>
                         </div>
                     </div>
-                    <!--Only show if the user is logged in-->
-                    {% if user.is_authenticated %}
-                    {% if user.id == post.author.id%}
-                    <div class="btn-container">
-                        <div class="btn-change">
-                            <a href="{% url 'update-review' post.pk %}" class="btn btn-primary">Update Review </a>
-                        </div>
-                        <a href="{% url 'delete-review' post.pk %}" class="btn btn-danger">Delete Review</a>
-                    </div>
-
-                    {% endif %}
-                    {% endif %}
                     <small> post created by {{post.author}} {{post.create_date}}</small>
                 </div>
             </div>
@@ -79,9 +70,10 @@
         {% for comment in post.comments.all  %}
         <div class="card hide">
             <div class="card-body">
-                <h6 class="card-subtitle mb-2 text-muted"> User: {{comment.author}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted"> Name: {{comment.author}}</h6>
                 <p class="card-text"> {{comment.body}}</p>
-                <small> {{comment.date_comment}} </small>
+                <small>Created {{comment.date_comment}} by user: {{comment.username}} </small>
+                
             </div>
         </div>
         {% endfor %}
