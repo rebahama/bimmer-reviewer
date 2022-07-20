@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
+{% block title %}
+   Create review
+  {% endblock %}
 {% load crispy_forms_tags %}
+<title> {{ title }} </title>
 <!--Position the form and render it-->
 {% if user.is_authenticated %}
 <div class="container">
