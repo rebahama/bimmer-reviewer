@@ -68,8 +68,8 @@
         {% else %}
         <div class="col-sm-3 p-2 comment-card" ></div>
         <button id="hide-btn" class="btn btn-primary"> Hide/Show Comments</button>
-        <h5 class="card-title">Comments</h5>
-        {% for comment in post.comments.all %}
+        <h5 class="card-title ">Comments</h5>
+        {% for comment in post.comments.all  %}
         <div class="card hide">
             <div class="card-body">
               <h6 class="card-subtitle mb-2 text-muted"> User: {{comment.author}}</h6>

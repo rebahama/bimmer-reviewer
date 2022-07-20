@@ -16,27 +16,34 @@ function clickIt(){
     }
 }
 
-
 // scroll back to top when clicked on this button
 let scrollBtn = document.getElementById('scroll-btn')
+if (scrollBtn){
+    scrollBtn.addEventListener('click', topClick)
+}
 
 function topClick(){
     scrollBtn.style.backgroundColor="red"
     document.body.scrollTop=0;
     document.documentElement.scrollTop = 0;
 }
-scrollBtn.addEventListener('click', topClick)
-window.addEventListener('click', scrollIt)
+let reveal=document.querySelectorAll('.swipe-up')
+if(reveal){
+    window.addEventListener('click', scrollIt)
+}
+
 
 function scrollIt(){
-let reveal=document.querySelectorAll('.swipe-up')
 for (let i = 0; i < reveal.length; i++) {
   if (reveal[i].style.backgroundColor==="white")
-     reveal[i].style.backgroundColor="red"
+     reveal[i].style.backgroundColor="blue"
   else
   reveal[i].style.backgroundColor="white"
 }
 }
+
+//Log out after a certain amount of time
+
 
 
 
