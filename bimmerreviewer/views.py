@@ -101,11 +101,18 @@ class CreateReview(SuccessMessageMixin, CreateView):
 
 class UpdateReview(SuccessMessageMixin, UpdateView):
     """ Update the view and the fileds that are below
+    After the update view have been sent via the form
+    return to the same page with the help of primary key
+    in the url.
     """
     model = Post
     template_name = 'update-review.html'
     fields = ['title', 'price', 'year', 'fuel_type', 'body',
               'category', 'image']
+   
+    def get_success_url(self):
+        update_id = self.kwargs['pk']
+        return reverse_lazy('detail-review', kwargs={'pk': update_id})
 
     success_message = "Review have been successfully updated"
 
