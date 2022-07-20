@@ -10,17 +10,18 @@
       <h1 class="text-center">{% trans "Sign In" %}</h1>
       <form class="login" method="POST" action="{% url 'account_login' %}">
         <div class="user-details p-5">
-        {% csrf_token %}
-        {{ form.as_p }}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-        {% endif %} 
-        <button class="primaryAction btn btn-primary" type="submit">{% trans "Sign In" %}</button>
-        <button class="btn btn-primary m-3"> <a class="button secondaryAction text-white" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a> </button>
-        <p class="p-3">{% blocktrans %}If you have not created an account yet, then please
-          <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+          {% csrf_token %}
+          {{ form.as_p }}
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+          <button class="primaryAction btn btn-primary" type="submit">{% trans "Sign In" %}</button>
+          <a class="button secondaryAction text-white btn btn-primary m-3"
+            href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+          <p class="p-3">{% blocktrans %}If you have not created an account yet, then please
+            <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+            </div>
       </form>
-    </div>
     </div>
   </div>
 </div>

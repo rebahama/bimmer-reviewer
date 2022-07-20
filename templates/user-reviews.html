@@ -1,7 +1,6 @@
 <div class="d-flex flex-column min-vh-100">
   {% extends 'base.html' %}
   {% block content %}
-  
   <div class="row row-cols-1 row-cols-md-4 g-4">
     {% if user.is_authenticated %}
     <div class="col-md-6 offset-md-3 shadow p-3 rounded text-white bg-dark">
@@ -41,11 +40,10 @@
     {%endif%}
     {% endfor %}
     {% else %}
-      <div class="col-md-6 offset-md-3 shadow p-3 rounded text-white bg-dark mt-md-5">
-    <h3 class="text-center"> Please <a href="{% url 'account_login' %}">log in</a> to perform this action </h3>
+    <div class="col-md-6 offset-md-3 shadow p-3 rounded text-white bg-dark mt-md-5">
+      <h3 class="text-center"> Please <a href="{% url 'account_login' %}">log in</a> to perform this action </h3>
     </div>
   </div>
-    {% endif %}
-  </div>
+  {% endif %}
 </div>
 {% endblock %}
