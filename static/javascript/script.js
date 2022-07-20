@@ -17,6 +17,36 @@ function clickIt(){
 }
 
 
+// scroll back to top when clicked on this button
+let scrollBtn = document.getElementById('scroll-btn')
+
+function topClick(){
+    scrollBtn.style.backgroundColor="red"
+    document.body.scrollTop=0;
+    document.documentElement.scrollTop = 0;
+}
+scrollBtn.addEventListener('click', topClick)
+window.addEventListener('click', scrollIt)
+
+function scrollIt(){
+let reveal=document.querySelectorAll('.swipe-up')
+for (let i = 0; i < reveal.length; i++) {
+  if (reveal[i].style.backgroundColor==="white")
+     reveal[i].style.backgroundColor="red"
+  else
+  reveal[i].style.backgroundColor="white"
+}
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
