@@ -1,3 +1,5 @@
+// Load this script after the html tag have been loaded
+window.onload = function(){
 // shows and hide the comments in the detail review page
 let btn = document.getElementById('hide-btn');
 if(btn){
@@ -15,7 +17,6 @@ function clickIt(){
         }   
     }
 }
-
 // scroll back to top when clicked on this button
 let scrollBtn = document.getElementById('scroll-btn')
 if (scrollBtn){
@@ -27,11 +28,23 @@ function topClick(){
     document.body.scrollTop=0;
     document.documentElement.scrollTop = 0;
 }
+
+let categoryBtn=document.getElementById('scroll-btn-category')
+if(categoryBtn){
+    categoryBtn.addEventListener('click', topClickCategory)
+}
+
+function topClickCategory(){
+    categoryBtn.style.backgroundColor="red"
+    document.body.scrollTop=0;
+    document.documentElement.scrollTop = 0;
+}
+
+//Change colour of cards when clicked
 let reveal=document.querySelectorAll('.swipe-up')
 if(reveal){
     window.addEventListener('click', scrollIt)
 }
-
 
 function scrollIt(){
 for (let i = 0; i < reveal.length; i++) {
@@ -42,9 +55,8 @@ for (let i = 0; i < reveal.length; i++) {
 }
 }
 
-//Log out after a certain amount of time
 
-
+}
 
 
 
