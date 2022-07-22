@@ -1,5 +1,6 @@
 <div class="d-flex flex-column min-vh-100">
   {% extends 'base.html' %}
+  {% load static %}
   {% block title %}
    All reviews 
   {% endblock %}
@@ -19,9 +20,9 @@
         <div class="card-header bg-dark text-white text-center">
           <h3>{{post.title}}</h3>
         </div>
-        <!--If a picture is not uploaded a default image will appear-->
+        <!--If a picture is not uploaded a default image will a appear-->
         {% if "placeholder" in post.image.url %}
-        <img src="/static/images/dashboard.jpg" class="card-img-top" alt="picture of bmw car" width="200" height="300">
+        <img src="{% static 'images/dashboard.jpg' %}" class="card-img-top" alt="picture of bmw car" width="200" height="300">
         {% else %}
         <img src="{{post.image.url}}" class="card-img-top" alt="picture of bmw car" width="300" height="300">
         {% endif %}
