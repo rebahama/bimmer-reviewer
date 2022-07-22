@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Review site for bmw fans.">
   <!-- Text inside this block is custom and will be shown in every page depending on what is inside this block-->
   <title>
-  {% block title %}
-   Homepage 
-  {% endblock %}
-</title>
+    {% block title %}
+    Homepage
+    {% endblock %}
+  </title>
   <meta name="keywords" content="Bmw,bimmer,Reviewer,cars">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 </head>
+
 <body class="d-flex flex-column min-vh-100">
   <!-- header and navbar starts here-->
   <header>
     <nav class="navbar navbar-expand-lg bg-primary">
-        <!--Show username that is logged in, onlyshown if the user i logged in-->
-        {% if user.is_authenticated %}
-         <p class="text-white m-2"> Logged in as <b>{{user.username}}</b></p>
-         {% endif %}
+      <!--Show username that is logged in, onlyshown if the user i logged in-->
+      {% if user.is_authenticated %}
+      <p class="text-white m-2"> Logged in as <b>{{user.username}}</b></p>
+      {% endif %}
       <div class="container-fluid">
         <form class="d-flex" method="POST" action="{% url 'search_list' %}" role="search">
           {% csrf_token %}
@@ -38,13 +40,14 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="{% url 'homepage' %}"> <i class="fa-solid fa-house"></i>  Home</a>
+              <a class="nav-link" aria-current="page" href="{% url 'homepage' %}"> <i class="fa-solid fa-house"></i>
+                Home</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 <!--Dropdown navbar-->
-                <i class="fa-solid fa-user"></i>  Account
+                <i class="fa-solid fa-user"></i> Account
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% if user.is_authenticated %}
@@ -83,12 +86,12 @@
     <div class="row">
       <div class="col-md-8 offset-md-2 mt-2">
         {%for message in messages%}
-        <div class="alert {{message.tags}} text-center" data-bs-dismiss="alert" id="msg" role="alert"> 
+        <div class="alert {{message.tags}} text-center" data-bs-dismiss="alert" id="msg" role="alert">
           {{message |safe}}
           {{message.error |safe}}
           <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
-        {%endfor%} 
+        {%endfor%}
       </div>
     </div>
   </div>
@@ -102,12 +105,12 @@
     <!-- Copyright -->
     <div class="text-center p-3 bg-primary text-white sm-4">
       <ul class="text-white footer-social">
-      <li class="list-inline-item"><a href="#" target="_blank"><i class="fa-brands fa-facebook"> </i></a></li>
-      <li class="list-inline-item"><a href="#" target="_blank"><i class="fa-brands fa-instagram"> </i></a></li>
-      <li class="list-inline-item"><a href="#" target="_blank"><i class="fa-brands fa-twitter"> </i></a></li>
-      <li class="list-inline-item"><a href="#" target="_blank"><i class="fa-brands fa-linkedin"> </i></a></li>
+        <li class="list-inline-item"><a href="#" target="_blank"><i class="fa-brands fa-facebook"> </i></a></li>
+        <li class="list-inline-item"><a href="#" target="_blank"><i class="fa-brands fa-instagram"> </i></a></li>
+        <li class="list-inline-item"><a href="#" target="_blank"><i class="fa-brands fa-twitter"> </i></a></li>
+        <li class="list-inline-item"><a href="#" target="_blank"><i class="fa-brands fa-linkedin"> </i></a></li>
       </ul>
-      </div>
+    </div>
   </footer>
   <!--Bootstrap cdn-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -117,5 +120,9 @@
   <script src="{% static 'javascript/script.js' %}"></script>
   <!--Fontawesome icons-->
   <script src="https://kit.fontawesome.com/1fb069670b.js" crossorigin="anonymous"></script>
+ <!-- Googel api -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD67rMKSBvC4Ssm6EUaObQgOMSkYJfguT4&callback=initMap&v=weekly" defer> </script>
 </body>
+
 </html>

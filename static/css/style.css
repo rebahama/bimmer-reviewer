@@ -75,6 +75,11 @@
 		transform: scale(1);
 	}
 }
+/* style the api map display */
+#map {
+	height: 400px;
+	width: 100%;
+}
 
 /*style the intro text*/
 .intro-text {
