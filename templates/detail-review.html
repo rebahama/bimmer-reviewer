@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}
    Detailed review
   {% endblock %}
@@ -12,7 +13,7 @@
             class="col-sm-12 col-xs-12 col-m-12 col-lg-12 detail-review-container shadow-lg bg-dark bg-gradient rounded">
             <div class="detail-img-container">
                 {% if "placeholder" in post.image.url %}
-                <img src="/static/images/dashboard.jpg" class="img-fluid rounded animate-detail-img border" width="600"
+                <img src="{% static 'images/dashboard.jpg' %}" class="img-fluid rounded animate-detail-img border" width="600"
                     height="500" alt="Picture of a dashboard">
                 {%else%}
                 <img src="{{post.image.url}}" class="img-fluid rounded animate-detail-img" width="600" height="500"
