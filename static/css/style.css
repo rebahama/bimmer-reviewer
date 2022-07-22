@@ -348,6 +348,10 @@ input[type=email] {
 		width: 14rem;
 	}
 
+	.navbar-container{
+		margin: auto;
+	}
+
 }
 
 
