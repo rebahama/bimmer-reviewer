@@ -106,10 +106,6 @@
 	font-size: 25px;
 }
 
-.background-img {
-	background: url('../images/bmw-css.jpg') center;
-	background-size: cover;
-}
 
 /*style the review cards*/
 .card-img-top {
