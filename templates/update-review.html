@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}
-   Update review
-  {% endblock %}
+Update review
+{% endblock %}
 {% block content %}
 {% load crispy_forms_tags %}
 <!--Update the database-->
@@ -23,9 +23,11 @@
                         {{ form.category|as_crispy_field }}
                         {{ form.body|as_crispy_field }}
                         {{ form.image|as_crispy_field }}
-                        <a href="{% url 'detail-review' post.pk %}" class="btn btn-success move-btn"> No, take me
-                            back </a>
+                    </div>
+                    <div class="update-container">
                         <button class="btn btn-primary m-3"> Update review</button>
+                        <a href="{% url 'detail-review' post.pk %}" class="btn btn-success move-btn"> Back to the
+                            review</a>
                     </div>
                 </form>
             </div>

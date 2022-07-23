@@ -160,6 +160,13 @@
 
 }
 
+
+.update-container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .detail-review-card {
 	min-width: 75%;
 	padding: 2px;
