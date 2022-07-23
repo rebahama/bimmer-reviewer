@@ -8,12 +8,12 @@
     <!--Loop thorugh the database and show it with cards-->
     {%if searching %}
     <div class="row row-cols-1 row-cols-md-8 g-4">
-      <h4 class="text-white text-center rounded opacity-75 bg-dark"> You searched for {{searching}}</h4>
+      <h1 class="text-white text-center rounded opacity-75 bg-dark"> You searched for {{searching}}</h1>
       {% for post in search_post %}
       <div class="col-md-6 col-lg-4 card-pos">
         <div class="card mb-3 shadow p-2">
           <div class="card-header bg-dark text-white text-center">
-            <h3>{{post.title}} </h3>
+            <h2>{{post.title}} </h2>
           </div>
           <!--If a picture is not uploaded a default image will appear-->
           {% if "placeholder" in post.image.url %}
@@ -41,7 +41,7 @@
       {%else%}
       <div class="row">
         <div class="col-md-6 offset-md-3 shadow p-3 rounded text-white text-center bg-dark mt-md-5">
-      <h4> Please type something to start searching </h4>
+      <h3> Please type something to start searching </h3>
       </div>
       </div>
       {%endif%}

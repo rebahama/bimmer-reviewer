@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3 p-4">
-            <h4 class="display-3 text-center"> Add a comment</h3>
+            <h1 class="display-3 text-center"> Add a comment</h1>
                 <div class="form-group shadow">
                     <div class="form-group">
                         <form method="POST" class="form-control">
@@ -22,11 +22,10 @@
         </form>
     </div>
 </div>
-
 {% else %}
 <div class="row row-cols-1 row-cols-md-4">
     <div class="col-md-6 offset-md-3 shadow p-3 rounded text-white bg-dark mt-md-5">
-  <h3 class="text-center"> Please <a href="{% url 'account_login' %}">log in</a> to perform this action </h3>
+  <h2 class="text-center"> Please <a href="{% url 'account_login' %}">log in</a> to perform this action </h2>
   </div>
 </div>
 {% endif %}

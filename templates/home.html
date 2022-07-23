@@ -7,7 +7,7 @@
   {% block content %}
   <div class="row">
     <div class="col-md-6 offset-md-3 shadow p-3 rounded text-white mt-md-5">
-      <h3 class="text-white text-center rounded opacity-75 bg-dark"> All reviews</h3>
+      <h1 class="text-white text-center rounded opacity-75 bg-dark"> All reviews</h1>
     </div>
   </div>
   <!--Loop thorugh the database and show it with cards-->
@@ -16,7 +16,7 @@
     <div class="col-md-6 col-lg-4 card-pos">
       <div class="card mb-3 shadow p-2 swipe-up">
         <div class="card-header bg-dark text-white text-center">
-          <h3>{{post.title}}</h3>
+          <h2>{{post.title}}</h2>
         </div>
         <!--If a picture is not uploaded a default image will a appear-->
         {% if "placeholder" in post.image.url %}

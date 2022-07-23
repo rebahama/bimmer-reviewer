@@ -7,7 +7,7 @@
 <div class="row">
     <div class="row row-cols-1 row-cols-md-4 g-4">
         <div class="col-md-6 offset-md-3 shadow p-3 rounded text-white border title-pos bg-dark">
-            <h3 class="text-center"> {{post.title}}</h3>
+            <h1 class="text-center"> {{post.title}}</h1>
         </div>
         <div
             class="col-sm-12 col-xs-12 col-m-12 col-lg-12 detail-review-container shadow-lg bg-dark bg-gradient rounded">
@@ -20,7 +20,7 @@
                     alt="Picture of a dashboard">
                 {%endif%}
                 <div class="card detail-review-card col-md-4">
-                    <h4 class="card-title text-center bg-dark text-white text-center">{{post.title}}</h4>
+                    <h2 class="card-title text-center bg-dark text-white text-center">{{post.title}}</h2>
                     <div class="card-body">
                         <p class="card-text">{{post.body}}</p>
                         <div class="card">
@@ -48,11 +48,11 @@
     <p class="card-text"> <a href="{% url 'add-comment' post.pk %}">Add a comment</a> </p>
     {% if not post.comments.all %}
     <div class="row">
-        <h4 class="text-white text-center rounded opacity-75 bg-dark"> No comments yet...</h4>
+        <h3 class="text-white text-center rounded opacity-75 bg-dark"> No comments yet...</h3>
         {% else %}
         <div class="col-sm-3 p-2 comment-card"></div>
         <button id="hide-btn" class="btn btn-primary"> Hide/Show Comments</button>
-        <h5 class="card-title ">Comments</h5>
+        <h4 class="card-title ">Comments</h4>
         {% for comment in post.comments.all  %}
         <div class="card hide">
             <div class="card-body">
