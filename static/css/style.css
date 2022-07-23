@@ -1,9 +1,13 @@
 /*style the navigation*/
 .nav-link {
-	color: #f4f4f4;
+	color: #000000;
 	font-size: 15px;
 	font-weight: bold;
 	padding: 9px;
+}
+
+.nav-link:hover{
+	color: #f4f4f4;
 }
 
 .navbar-toggler {
@@ -50,7 +54,6 @@
 }
 
 .img-container {
-	background-image: url("/static/images/bmw-background-2.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	padding-top: 200px;
@@ -192,7 +195,7 @@
 
 /*style the footer*/
 .footer-social a {
-	color: #f4f4f4;
+	color: #000000;
 
 }
 
@@ -202,7 +205,7 @@
 }
 
 .footer-social a:hover {
-	color: black;
+	color: #f4f4f4;
 }
 
 /*style the login page*/
@@ -346,6 +349,9 @@ input[type=email] {
 
 	.navbar-container{
 		margin: auto;
+	}
+	.detail-review-container, .title-pos{
+		margin-left: 2%;
 	}
 
 }
