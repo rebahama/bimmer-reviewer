@@ -8,7 +8,7 @@ Home
     <div class="row">
         <div class="col-sm-12">
             <div class="hero rounded">
-                <div class="img-container">
+                <div class="img-container bg-dark">
                     <div class="container fluid text-white bg-primary rounded top-text opacity-75 shadow p-3 mb-5">
                         <h1 class="intro-text"> Welcome to bimmer reviewer, this is a site for all the bimmer lovers
                             that
@@ -19,15 +19,15 @@ Home
                     {% if user.is_authenticated %}
                     <a href="{% url 'home' %}" class="btn bg-dark register-btn text-white">Show the reviews</a>
                     {% else %}
-                    <a href="{% url 'account_signup' %}" class="btn bg-dark register-btn text-white">Register now </a>
-                    <a href="{% url 'home' %}" class="btn bg-dark register-btn text-white">Show reviews</a>
+                    <a href="{% url 'account_signup' %}" class="btn bg-primary register-btn text-white">Register now </a>
+                    <a href="{% url 'home' %}" class="btn bg-primary register-btn text-white">Show reviews</a>
                     {% endif %}
                 </div>
             </div>
         </div>
     </div>
 </div>
-<h3 class="text-center text-white bg-primary rounded"> Check out the meetup below</h3>
+<h2 class="text-center text-white bg-primary rounded"> Check out the meetup below</h3>
 <!-- display the api map here-->
 <div class="row">
     <div class="col-sm-12 col-md-12">
