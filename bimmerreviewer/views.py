@@ -12,6 +12,18 @@ from django.http import HttpResponseRedirect
 from . models import Post, Comments
 
 
+def error_404(request, exepction):
+    """ handles error of "page of not found"""
+
+    return render(request, '404.html')
+
+
+def error_500(request, *args, **kwargs):
+    """ handles error of "page of not found"""
+
+    return render(request, '500.html')
+
+
 def category_review(request, series):
     """Method for rendering the html file below
         and for grasping the category variable in the

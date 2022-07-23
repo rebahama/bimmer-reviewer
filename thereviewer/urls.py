@@ -30,3 +30,7 @@ urlpatterns = [
     path('search/', views.search_list,
          name='search_list')
 ]
+
+# For error pages
+handler404 = 'bimmerreviewer.views.error_404'
+handler500 = 'bimmerreviewer.views.error_500'
