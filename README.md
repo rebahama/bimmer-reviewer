@@ -1,5 +1,6 @@
 # Bimmerreviewer
 Bimmerreviewer is a social media web application where users can create post reviews about their cars. Users will be able to create an account and upload information about their car with a picture. Users will be able to comment on a post and like the review post with a counter that displays the upvotes. The target group here is users that drive a BMW car, the goal with this site is that users will be able to display pro and cons about a specific car model that will be shared on the site.
+![Responsiv image frontpage](docs/homepage.png)
 
 # User stories
 
@@ -31,4 +32,10 @@ Bimmerreviewer is a social media web application where users can create post rev
 # Features and functionality 
 
 ## Frontpage
+The user will be welcomed with a intro and animation on the front page, on the top is a navigation menu and on the left top is a search bar. The user will be able to search after post with a certain title with the help of the search bar. The intro text will present with a button that takes the user to a register page. If the user is alredy logged in then the register button wont be displayed.
+![Frontpage](docs/home-3.png)
+
+On the bottom there is a Google map along with a footer, the map is only for development purpose for this project.
+![Google map page](docs/home-2.png)
+
 
