@@ -56,9 +56,9 @@
         {% for comment in post.comments.all  %}
         <div class="card hide">
             <div class="card-body">
-                <h6 class="card-subtitle mb-2 text-muted"> Name: {{comment.author}}</h6>
+                <h5 class="card-subtitle mb-2 text-muted"> Name: {{comment.author}}</h5>
                 <p class="card-text"> {{comment.body}}</p>
-                <small>Created {{comment.date_comment}} by user: {{comment.username}} </small>
+                <small>Created {{comment.date_comment}} </small>
             </div>
         </div>
         {% endfor %}
