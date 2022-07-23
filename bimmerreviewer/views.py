@@ -24,6 +24,11 @@ def error_500(request, *args, **kwargs):
     return render(request, '500.html')
 
 
+def contact_us(request):
+
+    return render(request, 'contact-us.html')
+
+
 def category_review(request, series):
     """Method for rendering the html file below
         and for grasping the category variable in the
@@ -121,7 +126,7 @@ class UpdateReview(SuccessMessageMixin, UpdateView):
     template_name = 'update-review.html'
     fields = ['title', 'price', 'year', 'fuel_type', 'body',
               'category', 'image']
-   
+
     def get_success_url(self):
         update_id = self.kwargs['pk']
         return reverse_lazy('detail-review', kwargs={'pk': update_id})

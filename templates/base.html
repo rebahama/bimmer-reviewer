@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,16 +34,20 @@
           <button class="btn btn-outline-dark bg-light text-dark rounded" type="submit">Search</button>
         </form>
         <div class="navbar-container">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="{% url 'homepage' %}"> <i class="fa-solid fa-house"></i>
                 Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="{% url 'contact-us' %}"> <i class="fa-solid fa-envelope"></i>
+                Contact us</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
@@ -106,10 +111,14 @@
     <!-- Copyright -->
     <div class="text-center p-3 bg-primary text-white sm-4">
       <ul class="text-white footer-social">
-        <li class="list-inline-item"><a href="https://sv-se.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"> </i></a></li>
-        <li class="list-inline-item"><a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"> </i></a></li>
-        <li class="list-inline-item"><a href="https://twitter.com/?lang=sv" target="_blank"><i class="fa-brands fa-twitter"> </i></a></li>
-        <li class="list-inline-item"><a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"> </i></a></li>
+        <li class="list-inline-item"><a href="https://sv-se.facebook.com/" target="_blank"><i
+              class="fa-brands fa-facebook"> </i></a></li>
+        <li class="list-inline-item"><a href="https://www.instagram.com/" target="_blank"><i
+              class="fa-brands fa-instagram"> </i></a></li>
+        <li class="list-inline-item"><a href="https://twitter.com/?lang=sv" target="_blank"><i
+              class="fa-brands fa-twitter"> </i></a></li>
+        <li class="list-inline-item"><a href="https://www.linkedin.com/" target="_blank"><i
+              class="fa-brands fa-linkedin"> </i></a></li>
       </ul>
     </div>
   </footer>
@@ -123,8 +132,10 @@
   <script src="{% static 'javascript/script-3.js' %}"></script>
   <!--Fontawesome icons-->
   <script src="https://kit.fontawesome.com/1fb069670b.js" crossorigin="anonymous"></script>
- <!-- Googel api -->
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD67rMKSBvC4Ssm6EUaObQgOMSkYJfguT4&callback=initMap&v=weekly" defer> </script>
+  <!-- Googel api -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD67rMKSBvC4Ssm6EUaObQgOMSkYJfguT4&callback=initMap&v=weekly"
+    defer> </script>
 </body>
 
 </html>

@@ -10,6 +10,7 @@ from bimmerreviewer import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index', views.homepage, name='homepage'),
+    path('contactus', views.contact_us, name='contact-us'),
     path('userreview', views.UserView.as_view(), name='user-reviews'),
     path('', views.Firstview.as_view(), name='home'),
     path('review/<int:pk>', views.DetailReview.as_view(),
