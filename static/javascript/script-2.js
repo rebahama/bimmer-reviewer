@@ -7,18 +7,9 @@ if (scrollBtn){
 }
 
 function topClick(){
+  "use strict";
     scrollBtn.style.backgroundColor="red";
     document.body.scrollTop=0;
     document.documentElement.scrollTop = 0;
-}
-
-
-function scrollIt(){
-for (let i = 0; i < reveal.length; i++) {
-  if (reveal[i].style.display==="none")
-     reveal[i].style.display="block";
-  else
-  reveal[i].style.display="none";
-}
 }
 

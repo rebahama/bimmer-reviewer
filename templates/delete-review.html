@@ -8,10 +8,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3 shadow-lg delete-review">
-            <h3 class="display-3 text-center"> Delete review</h3>
+            <h1 class="display-3 text-center"> Delete review</h1>
             <div class="form-group">
-                <h4 class="text-center"> You are about to delete this post with the title {{post.title}}, are you sure?
-                    </h3>
+                <h2 class="text-center"> You are about to delete this post with the title {{post.title}}, are you sure?
+                    </h2>
                     <form method="POST" enctype="multipart/form-data">
                         {%csrf_token%}
                         <div class="text-delete">

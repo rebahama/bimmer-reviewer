@@ -9,9 +9,9 @@ Bimmerreviewer is a social media web application where users can create post rev
 
 * As a user I would like to be able to create an personal account on the site.
 
-* As a user I would likt to be able to comment on a post/review.
+* As a user I would like to be able to comment on a post/review.
 
-* As a user I would likt to be able to like a post/review and to know how many other have alredy liked the same post.
+* As a user I would like to be able to like a post/review and to know how many other have alredy liked the same post.
 
 * As a user I would like to be able to search on the site after a certain title in the review.
 
@@ -28,6 +28,42 @@ Bimmerreviewer is a social media web application where users can create post rev
 
 * As admin I would like to delete a comment/post if it is inappropriate.
 
+# Wireframes
+
+## Homepage
+* The front page have an intro text that describes shortly what the site is about and that the user should get registered for an account. On the bottom there is an API call to google map to show where there are meetups. On the top left the user can search after a certain review.
+![Wireframe homepage](docs/wireframes/wire-frame.png)
+
+## Create review
+* Here the user would be able to create the review, the user will be informed with a text and then the user should will input the information and upload the review.
+
+![Wireframe create review](docs/wireframes/create-wireframe.png)
+
+## All reviews 
+* All the reviews that are created will be displayed on this page, on big screens the review cards will be displayed as 3 per row and on medium screens 2 per row and lastly on small screens 1 per row.
+
+![Wireframe create review](docs/wireframes/wireframe-allreview.png)
+
+## My reviews
+* Here only the personal reviews that the user have created will be displayed. The user must be logged in and the reviews must have been created by the user to display. The user can choose to delete,edit or view the review from this page.
+![Wireframe my reviews](docs/wireframes/wireframe-myreviews.png)
+
+
+## View review
+* Here is the detailed information that the user have written in the review alongside with a picture. The user can also like the review and add a comment on this page.
+
+
+![Wireframe detailer review](docs/wireframes/Detalied-wireframe.png)
+
+# Database diagrams
+The relatinoal database that I will be working with in this project will be Postgressql. Here is the diagrams for my database, I have one for comments and one for the reviews.
+
+## Post reviews
+* ![Wireframe database](docs/wireframes/Database-create.png)
+
+## Comments
+
+* ![Wireframe database](docs/wireframes/wireframe-comment.png)
 
 # Features and functionality 
 
@@ -184,8 +220,72 @@ A button that will automatically take the user back up to the top of the page wh
 
 # Future ideas
 
+* Include admin approval for comments
 
+* Include a from on the contact us page where the user can automatically send email.
 
+* Site users should be able to delete their own comments.
+
+* Site users can upload more then one image.
+
+* The images should be displayed as arrows with carousels.
+
+# Technology
+
+* The structure of the webpage was created with HTML5.
+
+* The styling was created with CSS3.
+
+* Bootstrap was used for responsiv design and some styling.
+
+* Django was used as a MVC.
+
+* Jinja tags was used for the logic on the HTML5 pages and retrive data from the database.
+
+* The database was created with Postgresql.
+
+* Some functions as show/hide buttons and "top page" buttons was created with Javascript.
+
+* Github was used as version system control.
+
+* The project is deployed with Heroku.
+
+* The static files and images are hosted by Cloudinary.
+
+* All the packages installd can be found here: [Requirements](https://github.com/rebahama/bimmer-reviewer/blob/main/requirements.txt).
+
+# Supported screens
+
+* Ipad Air/Ipad Mini.
+
+* Iphone 4/6/7/XR/12 and 12 pro.
+
+* Samsung Galaxy S8/S20.
+
+* Nesthub Max.
+
+* Pixel 5.
+
+# Bugs
+
+## Solved bugs
+* When the project was deployed to Heroku and debug set to false, all my static files stopped working, at first I thougth there was an issue with the host service because Cloudinary is hosting all my static files. Installed "Whitenoise" but website would still not retrive the static files after many hours of debugging and help from tutor: Scott it turned out that my image files needed to include jinja syntax for file path instead of a regular file path. And after changeing out all the regular filepath with the jinja syntax for static files in Django and write the command "collect staticfiles" after 20 minutes everything started to work.
+
+* When I created the Javascript file and started to add "eventlisteners" I Got a error in the chrome dev tools that said "Refrence error undefied", the solution for this was to add a Javascript file for every html page that was using Javascript code. I created 3 Javascript files and splitted upp my code and after that the error was not showing up.
+
+# Validation of files
+
+* The CSS file was validated with Jigshow and no errors was found. [Validate CSS](https://validator.w3.org/).
+
+*  The HTML5 files was validated with  the offical w3 html validation.[Validate html](https://validator.w3.org/). Only error I got was related to Jinja syntax tags, I choose to ignore the warnings.
+
+*  The Javascript files was validated by [Validate Javascript](https://jshint.com/).
+
+* The Python files was validate by [Validate Python](http://pep8online.com/).
+
+# Testing site and files
+
+* Testing is in a seperate document that can be found [Testing](http://pep8online.com/)
 
 
 
