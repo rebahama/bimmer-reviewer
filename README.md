@@ -4,7 +4,7 @@ Bimmerreviewer is a social media web application where users can create post rev
 
 # User stories
 
-## site users
+## Site users
 * As a user I would like to be able to create/delete and edit a post.
 
 * As a user I would like to be able to create an personal account on the site.
@@ -23,7 +23,7 @@ Bimmerreviewer is a social media web application where users can create post rev
 
 * As a user I would like a map where meetups can be shown and displayed.
 
-## admin
+## Admin
 * As admin i would like to inspect a post before it is approved and published on the site.
 
 * As admin I would like to delete a comment/post if it is inappropriate.
@@ -270,15 +270,3 @@ A button that will automatically take the user back up to the top of the page wh
 # Testing site and files
 
 * Testing is in a seperate document that can be found here: [Testing](https://github.com/rebahama/bimmer-reviewer/blob/main/TESTING.md)
-
-
-
-
-
-
-
-
-
-
-
-
