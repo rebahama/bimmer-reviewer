@@ -1,4 +1,4 @@
-# Manual Testing 
+# Manual testing and deployment
 
 
 ## Testing the user stories on the site

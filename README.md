@@ -269,7 +269,7 @@ A button that will automatically take the user back up to the top of the page wh
 
 # Testing site and files
 
-* Testing is in a seperate document that can be found here: [Testing](http://pep8online.com/)
+* Testing is in a seperate document that can be found here: [Testing](https://github.com/rebahama/bimmer-reviewer/blob/main/TESTING.md)
 
 
 
