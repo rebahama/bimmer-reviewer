@@ -49,6 +49,7 @@ No reviews will be displayed on the web page untill admin approves the post in d
 
 
 * As admin I would like to delete a comment/post if it is inappropriate.
+
 Admin can delete a post/user and comment. If admin deletes the user then all the post, likes and comments connected to that user will also be deleted.
 
 # Website testing
@@ -174,7 +175,7 @@ The following screens have been tested:
 
 ## Access enviorment variables
 
-* To access the enviorment variables from Heroku to this project add the following lines:
+* To access the enviorment variables from Heroku to this project add the following lines in the settings.py:
 
   * SECRET_KEY = os.environ.get('SECRET_KEY')
 
@@ -214,7 +215,7 @@ The following screens have been tested:
 # Bugs
 
 ## Solved bugs
-* When the project was deployed to Heroku and debug set to false, all my static files stopped working, at first I thougth there was an issue with the host service because Cloudinary is hosting all my static files. Installed "Whitenoise" but website would still not retrive the static files after many hours of debugging and help from tutor: Scott it turned out that my image files needed to include jinja syntax for file path instead of a regular file path. And after changeing out all the regular filepath with the jinja syntax for static files in Django and write the command "collect staticfiles" after 20 minutes everything started to work.
+* When the project was deployed to Heroku and debug set to false, all my static files stopped working, at first I thougth there was an issue with the host service because Cloudinary is hosting all my static files. Installed "Whitenoise" but website would still not retrive the static files after many hours of debugging and help from tutor Scott (thanks) it turned out that my image files needed to include jinja syntax for file path instead of a regular file path. And after changing out all the regular filepath with the Jinja syntax for static files in Django and write the command "collect staticfiles" after 20 minutes everything started to work.
 
 * When I created the Javascript file and started to add "eventlisteners" I Got a error in the chrome dev tools that said "Refrence error undefied", the solution for this was to add a Javascript file for every html page that was using Javascript code. I created 3 Javascript files and splitted upp my code and after that the error was not showing up.
 
@@ -226,11 +227,13 @@ The following screens have been tested:
 
 *  The HTML5 files was validated with  the offical w3 html validation.[Validate html](https://validator.w3.org/). Only error I got was related to Jinja syntax tags, I choose to ignore the warnings.
 
-*  The Javascript files was validated by [Validate Javascript](https://jshint.com/).
+*  The Javascript files was validated by [JShint](https://jshint.com/).
 For Javascript files I got the warning that "google is not defined" but since all the code is needed for the API call I ignored the warning.
 
 * The Python files was validate by [Validate Python](http://pep8online.com/).
 Only error I got from the python files was from my views.py file on line 80
-And on settings.py file line 134 and 70 "Line to long".
+And on settings.py file line 134 and 70 "Line too long".
 
-I tried to make it shorter but the files would display an error so I left that.
+I tried to make it shorter but the files would display an error and not work so I left that.
+
+Click here to go back to the README file [README](https://github.com/rebahama/bimmer-reviewer/blob/main/README.md)

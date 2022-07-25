@@ -38,7 +38,7 @@ Bimmerreviewer is a social media web application where users can create post rev
 ![Wireframe homepage](docs/wireframes/wire-frame.png)
 
 ## Create review
-* Here the user would be able to create the review, the user will be informed with a text and then the user should will input the information and upload the review.
+* Here the user would be able to create the review, the user will be informed with a text and then the user will input the information that is required and upload the review.
 
 ![Wireframe create review](docs/wireframes/create-wireframe.png)
 
@@ -48,7 +48,7 @@ Bimmerreviewer is a social media web application where users can create post rev
 ![Wireframe create review](docs/wireframes/wireframe-allreview.png)
 
 ## My reviews
-* Here only the personal reviews that the user have created will be displayed. The user must be logged in and the reviews must have been created by the user to display. The user can choose to delete,edit or view the review from this page.
+* Here only the personal reviews that the user have created will be displayed. The user must be logged in and the reviews must have been created by the user to be displayed on this page. The user can choose to delete,edit or view the review from this page.
 ![Wireframe my reviews](docs/wireframes/wireframe-myreviews.png)
 
 
@@ -61,12 +61,12 @@ Bimmerreviewer is a social media web application where users can create post rev
 # Database diagrams
 The relatinoal database that I will be working with in this project will be Postgressql. Here is the diagrams for my database, I have one for comments and one for the reviews.
 
-## Post reviews
-* ![Wireframe database](docs/wireframes/Database-create.png)
+## Post reviews:
+ ![Wireframe database](docs/wireframes/Database-create.png)
 
-## Comments
+## Comments:
 
-* ![Wireframe database](docs/wireframes/wireframe-comment.png)
+![Wireframe database](docs/wireframes/wireframe-comment.png)
 
 # Features and functionality 
 
@@ -112,21 +112,21 @@ When the user clicks log out the following page will be shown, if the user click
 ![Sign out](docs/images/sign-message-out.png)
 
 
-Everytime the user sign in a message will be showing displaying the username:
+Everytime the user signs in a message will be showing displaying the username:
 ![Sign in message](docs/images/sign-message.png)
 
 ## Create review:
 
 ![Create review](docs/images/create-review.png)
 
-This is where the magic happens, the user will be presented with a text explaining what to do. The title here must be unique and it the user tries to type in a title that alredy exist then a message will be displayed. If the user tries to upload a image to big or another format then a picture the page will display an "500" error. The price can't go below 0 and the year along with the fueltype only have prepopulated choiches thanks to the model that I created. If no image is uploaded then a default image will be uploaded instead of an empty file.
+This is where the magic happens, the user will be presented with a text explaining what to do. The title here must be unique and if the user tries to type in a title that alredy exist then a message will be displayed. If the user tries to upload a image to big or another format then a picture the page will display an "500" error. The price can't go below 0 and the year along with the fueltype only have prepopulated choiches thanks to the model that I created. If no image is uploaded then a default image will be uploaded instead of an empty file.
 
 
 After the user have clicked "upload review" the message below will be displayed:
 
 ![Review message](docs/images/review-message.png)
 
-Admin needs to approve the post before it can be seen on the webpage.On this page admin can review the created post and see all the data that have been posted by the user.
+Admin needs to approve the post before it can be seen on the webpage. On this page admin can review the created post and see all the data that have been posted by the user.
 ![Admin approve](docs/images/admin-approve.png)
 
 ## My reviews:
@@ -138,7 +138,7 @@ This page shows all the personal user reviews that the user have uploaded, only 
 When the user clicks the update review button the page below will be shown. Here the user can just update the data and click "update review".
 ![Update reveiw](docs/images/update-review.png)
 
-Afte the user have updated the info followin message will be shown:
+Afte the user have updated the info following message will be shown:
 ![Update message](docs/images/update-message.png)
 
 ## Delete review
@@ -160,7 +160,7 @@ After clicking "add comment" user will be directed to the page below to add a co
 
 ![Comment](docs/images/comment.png)
 
-After the comment have been posted message will be displayed:
+After the comment have been posted a message will be displayed:
 
 ![Comment message](docs/images/comment-message.png)
 
@@ -274,6 +274,11 @@ A button that will automatically take the user back up to the top of the page wh
 
 * Testing and deployment is in a seperate document that can be found here: [Testing and deployment](https://github.com/rebahama/bimmer-reviewer/blob/main/TESTING.md)
 
+# Agile development
+
+* I have documented my agile approach in this file : [Agile](https://github.com/rebahama/bimmer-reviewer/blob/main/TESTING.md)
+
+
 # Source code
 To acess the source code in Gitpod.
 
@@ -281,7 +286,7 @@ To acess the source code in Gitpod.
 
 2. Click on the green button texted "Gitpod"
 
-3. Before you can start the program you need to install the pip3 packages and add the enviorment files that can be found in the section "deployment" in this file: [pip3 Packages](https://github.com/rebahama/bimmer-reviewer/blob/main/TESTING.md).
+3. Before you can start the program you need to install the pip3 packages and add the enviorment variables that can be found in the section "deployment" in this file: [pip3 Packages](https://github.com/rebahama/bimmer-reviewer/blob/main/TESTING.md).
 
 4. After installing all the packages and declaring the enviorment variables type pyton3 manage.py runserver in the terminal.
 
@@ -301,6 +306,8 @@ Website link can be found here: [Bimmerreviewer website](https://bimmer-reviewer
 * Some coding practice was taken from the Django documentation [Django documentation](https://docs.djangoproject.com/en/4.0/)
 
 * Some of the design was taken from the Bootstrap documentation [Django documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/) 
+
+* Some Javascript documentation was taken from this site [Javascript documentation](https://www.w3schools.com/) 
 
 ## Media
 
