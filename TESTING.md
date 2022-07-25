@@ -78,6 +78,14 @@ Admin can delete a post/user and comment. If admin deletes the user then all the
 * Only members of the site can access authorized data and content.
 
 * Only created content relevant to the user id can be deleted or edited. One user can not access and edit another users content.
+  
+  If a user tries to copy the url for another users post and tries to edit or delete the post then the following message will be displayed:
+
+  ![Not relevant user](docs/images/not-user.png)
+
+  If user is not logged in and tries to access member content following message will be displayed: 
+
+  ![Not relevant user](docs/images/please-log.png)
 
 ## Search field
 
