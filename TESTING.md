@@ -143,7 +143,7 @@ The following screens have been tested:
 
 * Install all the requirements with the "command pip3 freeze --local  >  requirements.txt"
 
-* Create a file named "Procfile" in the main directory django project
+* Create a file named "Procfile" in the main directory django project and add the following line: web: gunicorn thereviewer.wsgi
 
 ## To use the secret key and database variables you need access to the Heroku account that stores the database and secret key and other sensitive data.
 

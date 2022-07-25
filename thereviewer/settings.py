@@ -54,9 +54,10 @@ INSTALLED_APPS = [
     'thereviewer'
 ]
 SITE_ID = 1
-
+# When user logs in
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+# Message for displaying when user makes a crud action
 MESSAGE_TAGS = {
         messages.DEBUG: 'alert-info',
         messages.INFO: 'alert-info',
@@ -95,7 +96,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'thereviewer.wsgi.application'
-# For email service
+# For sending email service
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
