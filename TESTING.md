@@ -190,7 +190,19 @@ The following screens have been tested:
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
-  * Dont forget to import dj_database_url and os 
+  * Dont forget to import dj_database_url and os
+
+  ## Develop in local enviorment.
+
+  * Create a python file called env.py and import os
+
+  * Add : os.environ["DATABASE_URL"] = value from heroku
+
+  * Add os.environ["CLOUDINARY_URL"] = value from heroku
+
+  * Add os.environ["SECRET_KEY"] = value from heroku
+
+  * Type python3 manage.py runserver in the terminal to start the project.
 
 
 
@@ -205,6 +217,8 @@ The following screens have been tested:
 * When the project was deployed to Heroku and debug set to false, all my static files stopped working, at first I thougth there was an issue with the host service because Cloudinary is hosting all my static files. Installed "Whitenoise" but website would still not retrive the static files after many hours of debugging and help from tutor: Scott it turned out that my image files needed to include jinja syntax for file path instead of a regular file path. And after changeing out all the regular filepath with the jinja syntax for static files in Django and write the command "collect staticfiles" after 20 minutes everything started to work.
 
 * When I created the Javascript file and started to add "eventlisteners" I Got a error in the chrome dev tools that said "Refrence error undefied", the solution for this was to add a Javascript file for every html page that was using Javascript code. I created 3 Javascript files and splitted upp my code and after that the error was not showing up.
+
+* I got an deployment error from Heroku that stated "Your account has reached its concurrent builds limit". This was due to that I deployed my project early and everytime I made a push in Github my site would be deployed again. This problem was solved by clicking and restarting "all dynos" in the "more" button in Heroku.
 
 # Validation of files
 

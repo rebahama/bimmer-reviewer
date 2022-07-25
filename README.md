@@ -2,6 +2,9 @@
 Bimmerreviewer is a social media web application where users can create post reviews about their cars. Users will be able to create an account and upload information about their car with a picture. Users will be able to comment on a post and like the review post with a counter that displays the upvotes. The target group here is users that drive a BMW car, the goal with this site is that users will be able to display pro and cons about a specific car model that will be shared on the site.
 ![Responsiv image frontpage](docs/images/homepage.png)
 
+# Website link
+* [Bimmerreviewer website](https://bimmer-reviewer.herokuapp.com/index)
+
 # User stories
 
 ## Site users
@@ -267,6 +270,38 @@ A button that will automatically take the user back up to the top of the page wh
 * Pixel 5.
 
 
-# Testing site and files
+# Testing site and deployment
 
-* Testing is in a seperate document that can be found here: [Testing](https://github.com/rebahama/bimmer-reviewer/blob/main/TESTING.md)
+* Testing and deployment is in a seperate document that can be found here: [Testing and deployment](https://github.com/rebahama/bimmer-reviewer/blob/main/TESTING.md)
+
+# Source code
+To acess the source code in Gitpod.
+
+1. Go to this repository [Repository](https://github.com/rebahama/bimmer-reviewer)
+
+2. Click on the green button texted "Gitpod"
+
+3. Before you can start the program you need to install the pip3 packages and add the enviorment files that can be found in the section "deployment" in this file: [pip3 Packages](https://github.com/rebahama/bimmer-reviewer/blob/main/TESTING.md).
+
+4. After installing all the packages and declaring the enviorment variables type pyton3 manage.py runserver in the terminal.
+
+Website link can be found here: [Bimmerreviewer website](https://bimmer-reviewer.herokuapp.com/index)
+
+# Credits
+
+## Content
+
+* The symbols in the navigation bar was taken from fontawesome [Symbols](https://fontawesome.com/)
+
+* Inspiration was taken from Code institue blog walkthrough  [I think blog](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/b31493372e764469823578613d11036b/fe4299adcd6743328183aab4e7ec5d13/).
+
+* Some code to Display the category was taken from the help of this video [Category video](https://www.youtube.com/watch?v=_ph8GF84fX4).
+
+
+* Some coding practice was taken from the Django documentation [Django documentation](https://docs.djangoproject.com/en/4.0/)
+
+* Some of the design was taken from the Bootstrap documentation [Django documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/) 
+
+## Media
+
+* All the pictures was taken from [Pexel](https://www.pexels.com/sv-se/)
