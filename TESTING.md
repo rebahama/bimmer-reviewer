@@ -38,7 +38,7 @@ Every time the user comments and likes a post there will be a message displayed 
 
 * As a user I would like a map where meetups can be shown and displayed.
 
-There is a Google maps displayed on the bottom of the page but this is only for development issues. On Chrome dev tools there is a warning displayed that I must create a billing on google site. But since this is only for devolopment and learning i choose to ignore that warning for now since that wont affect anything.
+There is a Google maps displayed on the bottom of the page but this is only for development issues. On Chrome dev tools there is a warning displayed that I must create a billing on google site. But since this is only for devolopment and learning i choose to ignore that warning for now since that wont affect anything. Also the personal Google api source code is shown in the index.html file, but since the code needs to be displayed by google in order for the api call to work, I decided to restrict the Api in google console settings to only my site so the api code wont't work if someones tries to copy it.
 
 ## Admin
 
@@ -220,6 +220,9 @@ The following screens have been tested:
 * When I created the Javascript file and started to add "eventlisteners" I Got a error in the chrome dev tools that said "Refrence error undefied", the solution for this was to add a Javascript file for every html page that was using Javascript code. I created 3 Javascript files and splitted upp my code and after that the error was not showing up.
 
 * I got an deployment error from Heroku that stated "Your account has reached its concurrent builds limit". This was due to that I deployed my project early and everytime I made a push in Github my site would be deployed again. This problem was solved by clicking and restarting "all dynos" in the "more" button in Heroku.
+
+* When I deployed my project to Heroku one of my intro pictures was not displayed and this was due to that I had this picture in my CSS file and Django has hard with pictures that are in the css file. The solution for this was that I had to have a jinja static filepath for my image and add this code to a style tag in the HTML file and then style the animation in the css. It is not best practice to hade a style tag in the html file but since this was only one tag that did not affect the code I decided to add it.
+
 
 # Validation of files
 
