@@ -7,7 +7,6 @@ Update review
 <!--Update the database-->
 {% if user.is_authenticated %}
 {% if user.id == post.author.id%}
-
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3 p-4">
@@ -34,10 +33,19 @@ Update review
         </div>
     </div>
 </div>
+<!--If user is not authorized or logged in as the relevant user that is editing post-->
 {% else %}
-Please log in
+<div class="row row-cols-1 row-cols-md-4">
+    <div class="col-md-6 offset-md-3 shadow p-3 rounded text-white bg-dark mt-md-5">
+  <h1 class="text-center"> Please <a href="{% url 'account_login' %}">log in</a> to perform this action </h1>
+  </div>
+</div>
 {% endif %}
 {% else %}
-
+<div class="row row-cols-1 row-cols-md-4">
+    <div class="col-md-6 offset-md-3 shadow p-3 rounded text-white bg-dark mt-md-5">
+  <h2 class="text-center"> Please <a href="{% url 'account_login' %}">log in</a> to personal account </h2>
+  </div>
+</div>
 {% endif %}
 {% endblock %}

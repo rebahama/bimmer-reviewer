@@ -3,6 +3,7 @@
    Delete review
   {% endblock %}
 {% block content %}
+<!--Delete the review only if user is authorized and have created the post-->
 {% if user.is_authenticated %}
 {% if user.id == post.author.id%}
 <div class="container">
@@ -24,9 +25,17 @@
     </div>
 </div>
 {% else %}
-Please log in
+<div class="row row-cols-1 row-cols-md-4">
+    <div class="col-md-6 offset-md-3 shadow p-3 rounded text-white bg-dark mt-md-5">
+  <h2 class="text-center"> Please <a href="{% url 'account_login' %}">log in</a> to perform this action </h2>
+  </div>
+</div>
 {% endif %}
 {% else %}
-Please log in to delete a review
+<div class="row row-cols-1 row-cols-md-4">
+    <div class="col-md-6 offset-md-3 shadow p-3 rounded text-white bg-dark mt-md-5">
+  <h2 class="text-center"> Please <a href="{% url 'account_login' %}">log in</a> to you personal account </h2>
+  </div>
+</div>
 {% endif %}
 {% endblock %}
