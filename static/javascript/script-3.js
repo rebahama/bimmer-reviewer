@@ -1,4 +1,5 @@
 // For category page
+// scroll to the top of the page when clicked on the element.
 window.onload = function(){
     "use strict";
  let categoryBtn=document.getElementById('scroll-btn-category');

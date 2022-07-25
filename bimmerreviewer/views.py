@@ -25,7 +25,7 @@ def error_500(request, *args, **kwargs):
 
 
 def contact_us(request):
-
+    """ render the contact us html"""
     return render(request, 'contact-us.html')
 
 
@@ -33,7 +33,7 @@ def category_review(request, series):
     """Method for rendering the html file below
         and for grasping the category variable in the
         model that is named Post. After grasping the category variable
-         put it in a context dicinoary so that we can use it as a template tag
+         put it in a context dictionary so that we can use it as a template tag
          in the html file"""
     category_specefic = Post.objects.filter(category=series).order_by("-create_date")
     return render(request, 'categories.html',
@@ -78,7 +78,9 @@ def search_list(request):
 
 
 class Firstview(ListView):
-    """Show all the data from the queryset only if admin approves it """
+    """Show all the data from the queryset only if admin approves
+       it and order it by the date
+    """
     queryset = Post.objects.filter(approved=True)
     ordering = ['-create_date']
     template_name = 'home.html'

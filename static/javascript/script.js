@@ -21,14 +21,14 @@
 
 // Initialize and add the map from google
 function initMap() {
-    // The location of Uluru
+    // The location of sthm
     const sthlm = { lat: 59.33258, lng: 18.0649 };
     // The map, centered at Uluru
     const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 10,
       center: sthlm,
     });
-    // The marker, positioned at Uluru
+    // The marker, positioned at sthlm
     const marker = new google.maps.Marker({
       position: sthlm,
       map: map,

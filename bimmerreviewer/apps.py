@@ -1,3 +1,4 @@
+""" Registering the name of the project to Django"""
 from django.apps import AppConfig
 
 
