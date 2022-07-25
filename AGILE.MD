@@ -1,12 +1,14 @@
 # Agile
 
-## Overview
-The first thing that I did was to look at the user stories and from there I was planning what user stories I must have in order for this project to succeed. I prioritized depending on the "must have" "could have".
+# Overview
+The first thing that I did was to look at the user stories and from there I was planning what user stories I must have in order for this project to succeed. I prioritized depending on the "must have" "could have". I had around 10 user stories and 2 iterations sprints. The prioritization was also based around the requirements for this project to pass.
 
-## All the user stories
-As a user I would like to be able to create/delete and edit a post.
+# All the user stories
+
 
 ## Must have
+* As a user I would like to be able to create/delete and edit a post.
+
 * As a user I would like to be able to create an personal account on the site.
 
 * As a user I would like to be able to comment on a post/review.
@@ -25,7 +27,7 @@ As a user I would like to be able to create/delete and edit a post.
 
 * As a user I would like to be able to upload a picture on the post review.
 
-* As a user I would like to be get notified if I click like on a post or if a comment have been successfully created.
+* As a user I would like to get notified if I click like on a post or if a comment have been successfully created.
 
 * As a user I would like a map where meetups can be shown and displayed.
 
@@ -43,7 +45,7 @@ I did not add too many user stories to iteration 1 because this was my first agi
 
 ![Agile](docs/agile/agile-3.png)
 
-But I did really good on the time because the code for the important user stories I decided to add more to iteration 1.
+But I did really good on the time because the code for the important user stories was finished and then I decided to add more userstoires to iteration 1.
 
 After about a week into the first sprint I got the following userstories done:
 ![Agile](docs/agile/agile-4.png)

@@ -276,7 +276,7 @@ A button that will automatically take the user back up to the top of the page wh
 
 # Agile development
 
-* I have documented my agile approach in this file : [Agile](https://github.com/rebahama/bimmer-reviewer/blob/main/TESTING.md)
+* I have documented my agile approach in this file : [Agile](https://github.com/rebahama/bimmer-reviewer/blob/main/AGILE.MD)
 
 
 # Source code
