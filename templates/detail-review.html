@@ -26,13 +26,14 @@
                         <p class="card-text">{{post.body}}</p>
                         <div class="card">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Price: {{post.price}}</li>
+                                <li class="list-group-item">Price: &#8364; {{post.price}}</li>
                                 <li class="list-group-item">Year: {{post.year}}</li>
                                 <li class="list-group-item">Fuel type: {{post.fuel_type}}</li>
                             </ul>
                         </div>
                     </div>
-                    <small> post created by {{post.author}} {{post.create_date}}</small>
+                    <small> post created by {{post.author}}</small>
+                    <small> {{post.create_date}}</small>
                 </div>
             </div>
         </div>
