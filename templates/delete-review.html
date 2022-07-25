@@ -27,14 +27,14 @@
 {% else %}
 <div class="row row-cols-1 row-cols-md-4">
     <div class="col-md-6 offset-md-3 shadow p-3 rounded text-white bg-dark mt-md-5">
-  <h2 class="text-center"> Please <a href="{% url 'account_login' %}">log in</a> to perform this action </h2>
+  <h1 class="text-center"> You can´t update this post because it have been created by another user </h1>
   </div>
 </div>
 {% endif %}
 {% else %}
 <div class="row row-cols-1 row-cols-md-4">
     <div class="col-md-6 offset-md-3 shadow p-3 rounded text-white bg-dark mt-md-5">
-  <h2 class="text-center"> Please <a href="{% url 'account_login' %}">log in</a> to you personal account </h2>
+  <h2 class="text-center"> Please <a href="{% url 'account_login' %}">log in</a> to perform this action </h2>
   </div>
 </div>
 {% endif %}
