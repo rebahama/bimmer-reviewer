@@ -40,6 +40,8 @@ Every time the user comments and likes a post there will be a message displayed 
 
 There is a Google maps displayed on the bottom of the page but this is only for development issues. On Chrome dev tools there is a warning displayed that I must create a billing on google site. But since this is only for devolopment and learning i choose to ignore that warning for now since that wont affect anything. Also the personal Google api source code is shown in the index.html file, but since the code needs to be displayed by google in order for the api call to work, I decided to restrict the Api in google console settings to only my site so the api code wont't work if someones tries to copy it.
 
+![Restrict API](docs/images/restrict.png)
+
 ## Admin
 
 

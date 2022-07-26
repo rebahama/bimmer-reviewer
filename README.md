@@ -78,11 +78,11 @@ On the bottom there is a Google map along with a footer, the map is only for dev
 ![Google map page](docs/images/home-2.png)
 
 ## Account
-If the user is not logged in to the page then the following will be displayed:
+If the user is not logged in to the page then the following buttons will be displayed:
 
 ![Account not logged in](docs/images/home-4.png)
 
-if the user is logged in to the page then the following will be displayed:
+if the user is logged in to the page then the following menu will be displayed it also shows who the user is that is logged in:
 
 ![Account choiches](docs/images/home-5.png)
 
