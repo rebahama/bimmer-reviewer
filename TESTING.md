@@ -233,6 +233,7 @@ The following screens have been tested:
 
 * When I deployed my project to Heroku one of my intro pictures was not displayed and this was due to that I had this picture in my CSS file and Django has hard with pictures that are in the css file. The solution for this was that I had to have a jinja static filepath for my image and add this code to a style tag in the HTML file and then style the animation in the css. It is not best practice to hade a style tag in the html file but since this was only one tag that did not affect the code I decided to add it.
 
+* At first the email smtp did not work, this issue was due to that Google had changed their policy regarding secure passwords, in order to use gmail as a smpt service for Django I hade to log in to my google account and then go to "security" , then I need to add 2 factor authentication and add an application password. After adding application password I copied the newly created key and added in that as a enviorment variable in Heroku called PASS and the key was the newly created application password. After that the bug was solved and everytime the user clicked forget password a link was sent.
 
 # Validation of files
 
