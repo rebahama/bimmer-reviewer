@@ -8,7 +8,7 @@
   <div class="row row-cols-1 row-cols-md-4 g-4">
     {% if user.is_authenticated %}
     <div class="col-md-6 offset-md-3 shadow p-3 rounded text-white bg-dark">
-      <h1 class="text-center">My reviews</h1>
+      <h2 class="text-center">My reviews</h2>
     </div>
     <!--Loop thorugh the database and show it with cards-->
     {% for post in object_list %}

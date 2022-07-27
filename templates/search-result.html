@@ -8,7 +8,7 @@
     <!--Loop thorugh the database and show it with cards-->
     {%if searching %}
     <div class="row row-cols-1 row-cols-md-8 g-4">
-      <h1 class="text-white text-center rounded opacity-75 bg-dark"> You searched for {{searching}}</h1>
+      <h2 class="text-white text-center rounded opacity-75 bg-dark"> You searched for {{searching}}</h2>
       {% for post in search_post %}
       <div class="col-md-6 col-lg-4 card-pos">
         <div class="card mb-3 shadow p-2">
