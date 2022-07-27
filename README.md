@@ -312,3 +312,5 @@ Website link can be found here: [Bimmerreviewer website](https://bimmer-reviewer
 ## Media
 
 * All the pictures was taken from [Pexel](https://www.pexels.com/sv-se/)
+
+* The favicon was created with [Favicon](https://www.brandcrowd.com/business-card-maker)
