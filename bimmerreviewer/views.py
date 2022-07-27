@@ -41,7 +41,7 @@ def category_review(request, series):
                             'category_specefic': category_specefic})
 
 
-def homepage(request):
+def home_page(request):
     """Render the html file below"""
     return render(request, 'index.html')
 
@@ -77,7 +77,7 @@ def search_list(request):
                       {'searching': searching, 'search_post': search_post})
 
 
-class Firstview(ListView):
+class FirstView(ListView):
     """Show all the data from the queryset only if admin approves
        it and order it by the date
     """
