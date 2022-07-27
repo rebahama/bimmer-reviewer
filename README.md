@@ -239,9 +239,9 @@ A button that will automatically take the user back up to the top of the page wh
 
 * The styling was created with CSS3.
 
-* Bootstrap was used for responsiv design and some styling.
+* Bootstrap version 5.2.0 was used for responsiv design and some styling.
 
-* Django was used as a MVC.
+* Django version 3.2.13 was used as a MVC.
 
 * Jinja tags was used for the logic on the HTML5 pages and retrive data from the database.
 
