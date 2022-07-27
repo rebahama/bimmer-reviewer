@@ -9,6 +9,8 @@ admin.site.register(Category)
 
 @admin.register(Comments)
 class CommentAdmin(admin.ModelAdmin):
+    """Display all the list below to show up on the admin area
+     """
     list_display = ('author', 'body', 'approve')
     list_filter = ('author', 'date_comment')
     actions = ['approve_comment']
@@ -19,9 +21,13 @@ class CommentAdmin(admin.ModelAdmin):
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
+    """Display all the list below to show up on the admin area
+     """
     list_display = ('title', 'price', 'body', 'approved')
     list_filter = ('author', 'create_date')
     actions = ['approved_posts']
 
     def approved_posts(self, request, queryset):
+        """ Only show the queryset that is set to true
+        """
         queryset.update(approved=True)

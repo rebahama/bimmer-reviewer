@@ -56,11 +56,11 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% if user.is_authenticated %}
+                <li class="dropdown-item" id="username-id"> Logged in as: {{user.username}} </li>
                 <li><a class="dropdown-item" href="{% url 'create-review' %}">Create review</a></li>
                 <li><a class="dropdown-item" href="{% url 'user-reviews' %}">Show my reviews </a></li>
                 {% endif %}
                 {% if user.is_authenticated %}
-                <li class="dropdown-item" id="username-id"> Logged in as: {{user.username}} </li>
                 <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log out</a></li>
                 {% else %}
                 <li><a class="dropdown-item" href="{% url 'account_login' %}">Log in</a></li>
