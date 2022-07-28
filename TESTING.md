@@ -95,6 +95,11 @@ Admin can delete a post/user and comment. If admin deletes the user then all the
 
 * The serach field will display relevant content when text is inputed in the field.
 
+## Comment and likes
+* The counter goes upp and down both when user clicks on the like button.
+
+* The counter for comment goes upp when user comments and goes down when comment is deleted.
+
 ## Error pages
 
 * When there is not a relevant path then the custom error message is displayed.
@@ -214,6 +219,17 @@ The following screens have been tested:
   * Add os.environ["SECRET_KEY"] = value from heroku
 
   * Type python3 manage.py runserver in the terminal to start the project.
+
+  ## Admin
+  * To access admin area type: python3 manage.py runserver.
+
+  * Open the browser for the project
+
+  * type admin in the url and you will be redirected to the admin login page.
+
+  * Type in username and password.
+
+  * Don't forget to set debug to true before accessing the admin area.
 
 
 
