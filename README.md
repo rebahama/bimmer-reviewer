@@ -3,7 +3,7 @@ Bimmerreviewer is a social media web application where users can create post rev
 ![Responsiv image frontpage](docs/images/homepage.png)
 
 # Website link
-* [Bimmerreviewer website](https://bimmer-reviewer.herokuapp.com/index)
+* [Bimmerreviewer website](https://bimmer-reviewer.herokuapp.com)
 
 # User stories
 
@@ -297,7 +297,7 @@ To acess the source code in Gitpod.
 
 4. After installing all the packages and declaring the enviorment variables type pyton3 manage.py runserver in the terminal.
 
-Website link can be found here: [Bimmerreviewer website](https://bimmer-reviewer.herokuapp.com/index)
+Website link can be found here: [Bimmerreviewer website](https://bimmer-reviewer.herokuapp.com)
 
 # Credits
 
