@@ -54,7 +54,7 @@
         <h3 class="text-white text-center rounded opacity-75 bg-dark"> No comments yet...</h3>
         {% else %}
         <div class="col-sm-3 p-2 comment-card"></div>
-        <button id="hide-btn" class="btn btn-primary"> Hide/Show Comments</button>
+        <button id="hide-btn" class="btn btn-primary"> Hide/Show Comments: {{post.comments.count}} </button>
         <h4 class="card-title ">Comments</h4>
         {% for comment in post.comments.all  %}
         <div class="card hide">
