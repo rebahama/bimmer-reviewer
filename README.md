@@ -166,13 +166,14 @@ After the comment have been posted a message will be displayed:
 
 The comment will be displayed like the picture below as you can see the name that the user typed before and date is also shown.User can also hide and show the comments with the help of a button.
 
+![Show comment](docs/images/show-comments.png)
 
 ## Comment counter
 The review cards will display how many comments there are on each post as you can see from the picture below.
 ![Show comment](docs/images/comment-counter.png)
 
 
-![Show comment](docs/images/show-comments.png)
+
 
 ## Like 
 The user will be able to like a post and a counter is displaying showing how many have liked the post:
