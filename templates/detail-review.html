@@ -20,25 +20,25 @@
                 <img src="{{post.image.url}}" class="img-fluid rounded animate-detail-img" width="600" height="500"
                     alt="Picture of a dashboard">
                 {%endif%}
-                <div class="card detail-review-card col-md-4">
-                    <h2 class="card-title text-center bg-dark text-white text-center">{{post.title}}</h2>
-                    <div class="card-body">
-                        <p class="card-text">{{post.body}}</p>
-                        <div class="card">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Price: &#8364; {{post.price}}</li>
-                                <li class="list-group-item">Year: {{post.year}}</li>
-                                <li class="list-group-item">Fuel type: {{post.fuel_type}}</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <small> post created by {{post.author}}</small>
-                    <small> {{post.create_date}}</small>
-                </div>
             </div>
         </div>
-        <a href="{% url 'home'%}" class="btn btn-success move-btn col-md-2 col-sm-2"> Back to all reviews </a>
+        <div class="card detail-review-card col-md-4 col-sm-4 offset-md-1 offset-sm-3">
+            <h2 class="card-title text-center bg-dark text-white text-center">{{post.title}}</h2>
+            <div class="card-body text-center">
+                <p class="card-text">{{post.body}}</p>
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Price: &#8364; {{post.price}}</li>
+                        <li class="list-group-item">Year: {{post.year}}</li>
+                        <li class="list-group-item">Fuel type: {{post.fuel_type}}</li>
+                    </ul>
+                </div>
+            </div>
+            <small> post created by {{post.author}}</small>
+            <small> {{post.create_date}}</small>
+        </div>
     </div>
+    <a href="{% url 'home'%}" class="btn btn-success move-btn col-md-2 col-sm-2"> Back to all reviews </a>
     <hr>
     {%if user.is_authenticated%}
     <form action="{% url 'like_review' post.pk %}" method="POST">
