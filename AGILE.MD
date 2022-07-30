@@ -1,7 +1,7 @@
 # Agile
 
 # Overview
-The first thing that I did was to look at the user stories and from there I was planning what user stories I must have in order for this project to succeed. I prioritized depending on the "must have" "could have". I had around 10 user stories and 2 iterations sprints. The prioritization was also based around the requirements for this project to pass.
+The first thing that I did was to look at the user stories and from there I was planning what user stories I must have in order for this project to succeed. I prioritized depending on the "must have" "could have". I had around 10 user stories and 2 iterations sprints. The prioritization was also based around the requirements for this project to pass. The story points was 30 and the plan was to split upp the story points on the 2 iteration sprints that I had. In the first sprint I got 8 userstories equal to about 20 points done and on the second sprint the remaing 10 storypoints was completed. The team velocity was 20 and total story points 30. 30/20 = 1,5, rounded up that is equal too 2. So 2 iterations where each iterations last around 14 days, the relase would be around 4 weeks.
 
 # All the user stories
 
